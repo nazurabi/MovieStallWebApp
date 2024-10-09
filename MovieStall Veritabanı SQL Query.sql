@@ -79,21 +79,7 @@ Biyografi ntext not null,
 DogumTarihi date not null,
 DogumYeri nvarchar(50) not null,
 KapakResmi nvarchar(50) not null,
-CONSTRAINT pk_oyuncular PRIMARY KEY(YonetmenID)
-)
-GO
-CREATE TABLE Eserler(
-EserlerID int IDENTITY(1,1),
-EserBilgisiIDFK int not null,
-KategoriIDFK int not null,
-OyuncuIDFK int not null,
-YonetmenIDFK int not null,
-YorumIDFK int,
-CONSTRAINT pk_eserler PRIMARY KEY (EserlerID),
-CONSTRAINT fk_eserbilgisi FOREIGN KEY (EserBilgisiIDFK) REFERENCES EserBilgisi(EserBilgisiID),
-CONSTRAINT fk_kategoriler FOREIGN KEY (KategoriIDFK) REFERENCES Kategoriler(KategoriID),
-CONSTRAINT fk_oyuncu FOREIGN KEY (OyuncuIDFK) REFERENCES Oyuncular(OyuncuID),
-CONSTRAINT fk_yonetmen FOREIGN KEY (YonetmenIDFK) REFERENCES Yonetmenler(YonetmenID),
+CONSTRAINT pk_yonetmen PRIMARY KEY(YonetmenID)
 )
 GO
 CREATE TABLE Uyeler(
@@ -109,19 +95,32 @@ Avatar nvarchar(50) not null,
 Durum bit not null,
 Silinmis bit not null,
 CONSTRAINT pk_uye PRIMARY KEY (UyeID),
-CONSTRAINT fk_izlediklerim FOREIGN KEY(Izlediklerim) REFERENCES Eserler(EserlerID),
-CONSTRAINT fk_izlenecekler FOREIGN KEY(Izlenecekler) REFERENCES Eserler(EserlerID)
+CONSTRAINT fk_izlediklerim FOREIGN KEY(Izlediklerim) REFERENCES EserBilgisi(EserBilgisiID),
+CONSTRAINT fk_izlenecekler FOREIGN KEY(Izlenecekler) REFERENCES EserBilgisi(EserBilgisiID)
 )
 GO
 CREATE TABLE Yorumlar(
 YrmID int IDENTITY(1,1),
-EserlerIDFK int not null,
 UyeIDFK int not null,
 Yorum ntext not null,
 EklemeTarihi date not null,
 MovieStallPuani nvarchar(2),
 Durum bit,
 CONSTRAINT pk_yorum PRIMARY KEY (YrmID),
-CONSTRAINT fk_eserler FOREIGN KEY(EserlerIDFK) REFERENCES Eserler(EserlerID),
 CONSTRAINT fk_uye FOREIGN KEY(UyeIDFK) REFERENCES Uyeler(UyeID),
+)
+GO
+CREATE TABLE Eserler(
+EserlerID int IDENTITY(1,1),
+EserBilgisiIDFK int not null,
+KategoriIDFK int not null,
+OyuncuIDFK int not null,
+YonetmenIDFK int not null,
+YorumIDFK int,
+CONSTRAINT pk_eserler PRIMARY KEY (EserlerID),
+CONSTRAINT fk_eserbilgisi FOREIGN KEY (EserBilgisiIDFK) REFERENCES EserBilgisi(EserBilgisiID),
+CONSTRAINT fk_kategoriler FOREIGN KEY (KategoriIDFK) REFERENCES Kategoriler(KategoriID),
+CONSTRAINT fk_oyuncu FOREIGN KEY (OyuncuIDFK) REFERENCES Oyuncular(OyuncuID),
+CONSTRAINT fk_yonetmen FOREIGN KEY (YonetmenIDFK) REFERENCES Yonetmenler(YonetmenID),
+CONSTRAINT fk_yorum FOREIGN KEY (YorumIDFK) REFERENCES Yorumlar(YrmID)
 )
