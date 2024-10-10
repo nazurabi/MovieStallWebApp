@@ -67,10 +67,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="default.aspx" />
+    <Content Include="resimler\filmstrip and camera.gif" />
     <Content Include="Web.config" />
+    <Content Include="YoneticiPaneli\css\girisStil.css" />
+    <Content Include="YoneticiPaneli\giris.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YoneticiPaneli\giris.aspx.cs">
+      <DependentUpon>giris.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\giris.aspx.designer.cs">
+      <DependentUpon>giris.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -81,6 +99,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
