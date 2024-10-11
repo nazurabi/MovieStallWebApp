@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\giris.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\yoneticipaneli\\css\\girisstil.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\css\\girisstil.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\yoneticipaneli\\giris.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\giris.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -21,42 +17,9 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 146,
+          "DockedWidth": 114,
           "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "girisStil.css",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\css\\girisStil.css",
-              "RelativeDocumentMoniker": "MovieStallWebApp\\YoneticiPaneli\\css\\girisStil.css",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\css\\girisStil.css*",
-              "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\css\\girisStil.css*",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAAEcAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-10T15:01:32.608Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 196,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "giris.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\giris.aspx.cs",
-              "RelativeDocumentMoniker": "MovieStallWebApp\\YoneticiPaneli\\giris.aspx.cs",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\giris.aspx.cs",
-              "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\giris.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T22:55:12.486Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -67,7 +30,20 @@
               "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\giris.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-10T21:55:18.989Z",
+              "WhenOpened": "2024-10-11T21:14:55.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "giris.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\giris.aspx.cs",
+              "RelativeDocumentMoniker": "MovieStallWebApp\\YoneticiPaneli\\giris.aspx.cs",
+              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\giris.aspx.cs",
+              "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\giris.aspx.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwB4AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T21:14:46.917Z",
               "EditorCaption": ""
             }
           ]

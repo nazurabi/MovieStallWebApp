@@ -57,3 +57,5 @@ C:\Users\Aden Hadika\Desktop\MovieStallWebApp\MovieStallWebApp\MovieStallWebApp\
 C:\Users\Aden Hadika\Desktop\MovieStallWebApp\MovieStallWebApp\MovieStallWebApp\obj\Debug\MovieSta.53C6AA0E.Up2Date
 C:\Users\Aden Hadika\Desktop\MovieStallWebApp\MovieStallWebApp\MovieStallWebApp\obj\Debug\MovieStallWebApp.dll
 C:\Users\Aden Hadika\Desktop\MovieStallWebApp\MovieStallWebApp\MovieStallWebApp\obj\Debug\MovieStallWebApp.pdb
+C:\Users\Aden Hadika\Desktop\MovieStallWebApp\MovieStallWebApp\MovieStallWebApp\bin\VeriErisimKatmani.dll
+C:\Users\Aden Hadika\Desktop\MovieStallWebApp\MovieStallWebApp\MovieStallWebApp\bin\VeriErisimKatmani.pdb

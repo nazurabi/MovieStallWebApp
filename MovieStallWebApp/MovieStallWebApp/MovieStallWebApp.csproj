@@ -72,6 +72,7 @@
     <Content Include="Web.config" />
     <Content Include="YoneticiPaneli\css\girisStil.css" />
     <Content Include="YoneticiPaneli\giris.aspx" />
+    <Content Include="YoneticiPaneli\YoneticiDefault.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="default.aspx.cs">
@@ -89,6 +90,13 @@
     <Compile Include="YoneticiPaneli\giris.aspx.designer.cs">
       <DependentUpon>giris.aspx</DependentUpon>
     </Compile>
+    <Compile Include="YoneticiPaneli\YoneticiDefault.aspx.cs">
+      <DependentUpon>YoneticiDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\YoneticiDefault.aspx.designer.cs">
+      <DependentUpon>YoneticiDefault.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -99,7 +107,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\VeriErisimKatmani\VeriErisimKatmani.csproj">
+      <Project>{9fb88d6a-7709-4835-9868-70904a01a2db}</Project>
+      <Name>VeriErisimKatmani</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

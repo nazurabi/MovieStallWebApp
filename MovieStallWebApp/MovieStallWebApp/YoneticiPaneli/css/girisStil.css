@@ -60,14 +60,33 @@ body {
     font-size: 12px;
     padding: 3px;
     text-decoration: none;
-    background-color: #8F6748;
+    background-color: #1ABC9C;
 }
+    .uyelink:hover {
+        background-color: #F9D56D
+    }
 .girisButon {
     border-radius: 5px;
     font-size: 12px;
     padding: 3px;
     text-decoration: none;
-    width: 300px;
-    background-color: #8F6748;
-    margin:auto;
+    width: 320px;
+    background-color: #1ABC9C;
+    cursor:pointer;
+}
+    .girisButon:hover {
+        background-color: #F9D56D;
+    }
+
+.unuttum{
+    color: dimgray;
+    font-size: 12px;
+    text-decoration:none;
+}
+.girisbilgipaneli{
+    background-color:#fe4385;
+    color:white;
+    padding:10px;
+    width:298px;
+    border: 1px solid #FE4250;
 }
