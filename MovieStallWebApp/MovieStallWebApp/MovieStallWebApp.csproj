@@ -71,8 +71,8 @@
     <Content Include="resimler\filmstrip and camera.gif" />
     <Content Include="Web.config" />
     <Content Include="YoneticiPaneli\css\girisStil.css" />
+    <Content Include="YoneticiPaneli\css\yoneticipnlsitili.css" />
     <Content Include="YoneticiPaneli\giris.aspx" />
-    <Content Include="YoneticiPaneli\YoneticiDefault.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="default.aspx.cs">
@@ -90,12 +90,19 @@
     <Compile Include="YoneticiPaneli\giris.aspx.designer.cs">
       <DependentUpon>giris.aspx</DependentUpon>
     </Compile>
-    <Compile Include="YoneticiPaneli\YoneticiDefault.aspx.cs">
-      <DependentUpon>YoneticiDefault.aspx</DependentUpon>
+    <Compile Include="YoneticiPaneli\yoneticiDefault.aspx.cs">
+      <DependentUpon>yoneticiDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="YoneticiPaneli\YoneticiDefault.aspx.designer.cs">
-      <DependentUpon>YoneticiDefault.aspx</DependentUpon>
+    <Compile Include="YoneticiPaneli\yoneticiDefault.aspx.designer.cs">
+      <DependentUpon>yoneticiDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\yoneticipnl.Master.cs">
+      <DependentUpon>yoneticipnl.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\yoneticipnl.Master.designer.cs">
+      <DependentUpon>yoneticipnl.Master</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +113,8 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="YoneticiPaneli\yoneticiDefault.aspx" />
+    <Content Include="YoneticiPaneli\yoneticipnl.Master" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VeriErisimKatmani\VeriErisimKatmani.csproj">

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MovieStallWebApp.YoneticiPaneli
 {
-    public partial class YoneticiDefault : System.Web.UI.Page
+    public partial class yoneticiDefault : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

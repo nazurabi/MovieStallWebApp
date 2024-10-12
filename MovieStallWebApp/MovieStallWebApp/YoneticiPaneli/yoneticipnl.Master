@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="yoneticipnl.master.cs" Inherits="MovieStallWebApp.YoneticiPaneli.yoneticipnl" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Movie Stall-Yönetim Paneli</title>
+    <link href="css/yoneticipnlsitili.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="menu">
+            <div class="panelBasligi">
+                <h1>Movie Stall</h1>
+                <h4>Yönetim Paneli</h4>
+            </div>
+            <div class="kullaniciBilgiPaneliBasligi">
+                <asp:Label ID="lbl_kullanicibilgi" runat="server" CssClass="kullaniciBilgiPaneliYetki">Kullanıcı Adı(Yetki)</asp:Label>
+                <asp:LinkButton ID="lbtn_cikis" runat="server" CssClass="kullaniciBilgiPaneliCikis" OnClick="lbtn_cikis_Click">Güvenli Çıkış</asp:LinkButton>
+                <div />
+                <div style="clear: both;"></div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            </div>
+    </form>
+</body>
+</html>

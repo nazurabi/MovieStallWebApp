@@ -26,7 +26,8 @@ namespace MovieStallWebApp.YoneticiPaneli
                     yonetici Y = vrktmn.yoneticiGirisi(tb_mail.Text, tb_sifre.Text);
                     if(Y!=null)
                     {
-                        Response.Redirect("YoneticiDefault.aspx");
+                        Session["Yonetici"] = Y;
+                        Response.Redirect("yoneticiDefault.aspx");
                     }
                     else
                     {
