@@ -96,7 +96,43 @@ namespace VeriErisimKatmani
             }
         }
 
+
+        public List<kategori> kategoriListele()
+        {
+            List<kategori> kategoriler = new List<kategori>();
+            try
+            {
+                cmd.CommandText = "SELECT KategoriID,KategoriIsmi,Durum,Silinmis FROM Kategoriler";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader okuyucu = cmd.ExecuteReader();
+                while(okuyucu.Read())
+                {
+                    kategori ktgr = new kategori();
+                    ktgr.KategoriID = okuyucu.GetInt32(0);
+                    ktgr.KategoriIsmi = okuyucu.GetString(1);
+                    ktgr.Durum = okuyucu.GetBoolean(2);
+                    ktgr.Silinmis= okuyucu.GetBoolean(3);
+                    kategoriler.Add(ktgr);
+                }
+                return kategoriler;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         #endregion
+
+
+
+
 
     }
 }

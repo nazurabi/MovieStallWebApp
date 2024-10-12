@@ -1,0 +1,46 @@
+﻿.sayfaBaslik {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid silver;
+}
+
+.tablo {
+    width: 1000px;
+}
+
+    .tablo tr {
+    }
+
+        .tablo tr th {
+            background-color: #ECF0F1;
+            padding: 10px;
+            text-align: left;
+            border: 1px solid silver;
+        }
+
+        .tablo tr td {
+            border: 1px solid silver;
+            padding: 10px;
+        }
+
+    .tablo alternate td {
+        background-color: #efefef;
+    }
+
+.duzenle {
+    padding:10px;
+    font-size:12px;
+    border-radius:3px;
+    background-color:forestgreen;
+    color:white;
+    text-decoration:none;
+}
+
+.sil {
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+}

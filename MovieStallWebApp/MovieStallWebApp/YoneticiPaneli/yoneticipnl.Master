@@ -30,7 +30,7 @@
                 <a href="yoneticiDefault.aspx">Ana Sayfa</a>
                 <hr />
                 <a href="kategoriEkle.aspx">Kategori Ekle</a>
-                <a href="yoneticiDefault.aspx">Kategori Listele</a>
+                <a href="kategoriListele.aspx">Kategori Listele</a>
                 <hr />
                 <a href="yoneticiDefault.aspx">Eser Ekle</a>
                 <a href="yoneticiDefault.aspx">Eser Listele</a>

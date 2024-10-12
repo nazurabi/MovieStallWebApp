@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\yoneticipaneli\\giris.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\giris.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
@@ -13,12 +17,25 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 72,
+          "DockedWidth": 20,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "default.aspx",
+              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\default.aspx",
+              "RelativeDocumentMoniker": "MovieStallWebApp\\default.aspx",
+              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\default.aspx",
+              "RelativeToolTip": "MovieStallWebApp\\default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-10-12T22:17:30.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "giris.aspx",
               "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\giris.aspx",
               "RelativeDocumentMoniker": "MovieStallWebApp\\YoneticiPaneli\\giris.aspx",
@@ -26,7 +43,7 @@
               "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\giris.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-12T20:36:06.618Z",
+              "WhenOpened": "2024-10-12T22:16:04.038Z",
               "EditorCaption": ""
             }
           ]
