@@ -3,98 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\yoneticipaneli\\yoneticidefault.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\yoneticidefault.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\yoneticipaneli\\yoneticipnl.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\yoneticipnl.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\yoneticipaneli\\giris.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\giris.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\yoneticipaneli\\yoneticipnl.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\yoneticipnl.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\yoneticipaneli\\giris.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\giris.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\yoneticipaneli\\css\\girisstil.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\css\\girisstil.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\yoneticipaneli\\css\\yoneticipnlsitili.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\css\\yoneticipnlsitili.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 1,
+      "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 784,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 72,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "girisStil.css",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\css\\girisStil.css",
-              "RelativeDocumentMoniker": "MovieStallWebApp\\YoneticiPaneli\\css\\girisStil.css",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\css\\girisStil.css",
-              "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\css\\girisStil.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-12T10:20:25.842Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "giris.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\giris.aspx.cs",
-              "RelativeDocumentMoniker": "MovieStallWebApp\\YoneticiPaneli\\giris.aspx.cs",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\giris.aspx.cs",
-              "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\giris.aspx.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T10:08:44.241Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "yoneticiDefault.aspx",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\yoneticiDefault.aspx",
-              "RelativeDocumentMoniker": "MovieStallWebApp\\YoneticiPaneli\\yoneticiDefault.aspx",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\yoneticiDefault.aspx",
-              "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\yoneticiDefault.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-12T10:02:17.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "yoneticipnl.Master.cs",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\yoneticipnl.Master.cs",
-              "RelativeDocumentMoniker": "MovieStallWebApp\\YoneticiPaneli\\yoneticipnl.Master.cs",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\yoneticipnl.Master.cs",
-              "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\yoneticipnl.Master.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA7wBwAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T10:03:03Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "giris.aspx",
               "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\giris.aspx",
               "RelativeDocumentMoniker": "MovieStallWebApp\\YoneticiPaneli\\giris.aspx",
@@ -102,39 +26,7 @@
               "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\giris.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-12T09:59:43.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "yoneticipnl.Master",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\yoneticipnl.Master",
-              "RelativeDocumentMoniker": "MovieStallWebApp\\YoneticiPaneli\\yoneticipnl.Master",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\yoneticipnl.Master",
-              "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\yoneticipnl.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-12T08:25:19.049Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedHeight": 568,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "yoneticipnlsitili.css",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\css\\yoneticipnlsitili.css",
-              "RelativeDocumentMoniker": "MovieStallWebApp\\YoneticiPaneli\\css\\yoneticipnlsitili.css",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\css\\yoneticipnlsitili.css",
-              "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\css\\yoneticipnlsitili.css",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-12T08:32:20.271Z",
+              "WhenOpened": "2024-10-12T20:36:06.618Z",
               "EditorCaption": ""
             }
           ]

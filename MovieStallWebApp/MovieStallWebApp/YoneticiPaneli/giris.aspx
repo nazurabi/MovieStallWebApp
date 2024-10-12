@@ -35,7 +35,7 @@
             </div>
             <div class="sag">
                 <h2>Giriş Paneline Hoşgeldiniz</h2>
-                <h5 style="margin-top: 270px;">Bu Alandan Üye Girişi Yapılmamaktadır.<br />
+                <h5 style="margin-top: 260px;">Bu Alandan Üye Girişi Yapılmamaktadır.<br />
                     Üye Girişi İçin</h5>
                 <a href="#" class="uyelink">Tıklayınız</a>
             </div>

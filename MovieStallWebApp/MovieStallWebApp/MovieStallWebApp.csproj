@@ -70,6 +70,7 @@
     <Content Include="default.aspx" />
     <Content Include="resimler\filmstrip and camera.gif" />
     <Content Include="Web.config" />
+    <Content Include="YoneticiPaneli\css\formStil.css" />
     <Content Include="YoneticiPaneli\css\girisStil.css" />
     <Content Include="YoneticiPaneli\css\yoneticipnlsitili.css" />
     <Content Include="YoneticiPaneli\giris.aspx" />
@@ -89,6 +90,13 @@
     </Compile>
     <Compile Include="YoneticiPaneli\giris.aspx.designer.cs">
       <DependentUpon>giris.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\kategoriEkle.aspx.cs">
+      <DependentUpon>kategoriEkle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\kategoriEkle.aspx.designer.cs">
+      <DependentUpon>kategoriEkle.aspx</DependentUpon>
     </Compile>
     <Compile Include="YoneticiPaneli\yoneticiDefault.aspx.cs">
       <DependentUpon>yoneticiDefault.aspx</DependentUpon>
@@ -113,6 +121,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="YoneticiPaneli\kategoriEkle.aspx" />
     <Content Include="YoneticiPaneli\yoneticiDefault.aspx" />
     <Content Include="YoneticiPaneli\yoneticipnl.Master" />
   </ItemGroup>

@@ -17,7 +17,7 @@ namespace VeriErisimKatmani
             cmd = con.CreateCommand();
         }
         #region Yönetici Metodları
-        
+
         public yonetici yoneticiGirisi(string mail, string sifre) // Textboxlardan gelen mail ve şifre verisini burada alıyoruz.
         {
             try
@@ -28,7 +28,7 @@ namespace VeriErisimKatmani
                 cmd.Parameters.AddWithValue("@sifre", sifre);// Parameters ile Injection a karşı koruma amacıyla verileri bu şekilde ekliyoruz.
                 con.Open();
                 int sayi = Convert.ToInt32(cmd.ExecuteScalar()); // Olup olmamasını kontrol etme nedenimiz SQL Injectiondan kaçınmak amacıyla aslında çünkü Injection yese bile if kontrolünü aşıp veriyi bulup içinden detayları alamaz, geriye 1 döndürse bile bu sadece bir sayıdan ibaret olur çünkü count varsa işleme devam et deyip if bloğu kullandık yani arka arkaya birkaç kontrol yaptırdık bu nedenle SQL Injection yemesi bu tarz bir düzen için zor olmaktadır.
-                if(sayi==1) // Eğer counttan dönen değer 1 ise mail ve şifrenin olduğunu anlayıp işleme devam eder ve gerekli bilgileri veritabanından çeker.
+                if (sayi == 1) // Eğer counttan dönen değer 1 ise mail ve şifrenin olduğunu anlayıp işleme devam eder ve gerekli bilgileri veritabanından çeker.
                 {
                     cmd.CommandText = "SELECT Y.YntID, Y.YntTurID,YT.Isim,Y.Isim,Y.Soyisim,Y.KullaniciAdi,Y.Mail,Y.Sifre,Y.Durum,Y.Silinmis FROM Yoneticiler AS Y JOIN YoneticiTurleri AS YT ON Y.YntTurID=YT.ID WHERE Y.Mail=@mail AND Y.Sifre=@sifre";
                     cmd.Parameters.Clear();
@@ -36,7 +36,7 @@ namespace VeriErisimKatmani
                     cmd.Parameters.AddWithValue("@sifre", sifre);
                     SqlDataReader okuyucu = cmd.ExecuteReader();
                     yonetici Y = new yonetici();
-                    while(okuyucu.Read())
+                    while (okuyucu.Read())
                     {
                         Y.YntID = okuyucu.GetInt32(0);
                         Y.YntTurID = okuyucu.GetInt32(1);
@@ -67,6 +67,34 @@ namespace VeriErisimKatmani
             }
         }
 
+
+        #endregion
+
+        #region Kategori Metodları
+
+        public bool kategoriEkle(kategori K)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Kategoriler(KategoriIsmi,Durum,Silinmis) VALUES(@kategoriIsmi,@durum,@silinmis)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@kategoriIsmi", K.KategoriIsmi);
+                cmd.Parameters.AddWithValue("@durum", K.Durum);
+                cmd.Parameters.AddWithValue("@silinmis", K.Silinmis);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true; ;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
         #endregion
 

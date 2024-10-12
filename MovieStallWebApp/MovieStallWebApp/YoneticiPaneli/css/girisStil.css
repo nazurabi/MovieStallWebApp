@@ -1,5 +1,6 @@
 ﻿*, h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    padding:0;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 15%;
+    border-radius:10px;
     box-shadow: 10px 10px 13px 0px rgba(0,0,0,0.75);
     -webkit-box-shadow: 10px 10px 13px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 13px 0px rgba(0,0,0,0.75);
@@ -24,6 +26,8 @@ body {
     width: 400px;
     float: left;
     height: 300px;
+    border-bottom-left-radius:10px;
+    border-top-left-radius:10px;
 }
 
 .sag {
@@ -34,6 +38,8 @@ body {
     float: left;
     height: 360px;
     text-align: center;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .satir {
@@ -43,10 +49,10 @@ body {
 .metinkutu {
     color: white;
     padding: 10px;
-    width:300px;
+    width: 300px;
     border-radius: 5px;
     border: none;
-    background-color: #7A8A80
+    background-color: #7A8A80;
 }
 
 ::placeholder {
@@ -58,11 +64,11 @@ body {
     border-radius: 5px;
     border: 1px solid white;
     font-size: 12px;
-    padding: 3px;
+    padding: 2px;
     text-decoration: none;
     background-color: #1ABC9C;
 }
-    .uyelink:hover {
+    .uyelink:hover {    
         background-color: #F9D56D
     }
 .girisButon {
@@ -84,9 +90,9 @@ body {
     text-decoration:none;
 }
 .girisbilgipaneli{
-    background-color:#fe4385;
+    background-color:#FE4385;
     color:white;
     padding:10px;
     width:298px;
-    border: 1px solid #FE4250;
+    border-radius: 5px;
 }
