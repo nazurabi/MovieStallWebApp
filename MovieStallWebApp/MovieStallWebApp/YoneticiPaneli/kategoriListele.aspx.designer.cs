@@ -15,12 +15,21 @@ namespace MovieStallWebApp.YoneticiPaneli
     {
 
         /// <summary>
-        /// lv_kategoriler control.
+        /// lv_kategorilerAktif control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_kategoriler;
+        protected global::System.Web.UI.WebControls.ListView lv_kategorilerAktif;
+
+        /// <summary>
+        /// lv_kategorilerSilinmis control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lv_kategorilerSilinmis;
     }
 }
