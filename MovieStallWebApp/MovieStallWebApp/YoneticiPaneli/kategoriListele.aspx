@@ -28,8 +28,9 @@
                     <td><%# Eval("Durum") %></td>
                     <td><%# Eval("Silinmis") %></td>
                     <td>
-                        <asp:LinkButton ID="lbtn_sil" runat="server" CssClass="sil" CommandArgument='<% Eval("KategoriID")%>'>Sil</asp:LinkButton>
-                        <asp:LinkButton ID="lbtn_duzenle" runat="server" CssClass="duzenle" CommandArgument='<% Eval("KategoriID")%>'>Durum Düzenle</asp:LinkButton>
+                        <a href='kategoriDuzenle.aspx?KategoriID=<%# Eval("KategoriID") %>' class="geriAl">Kategori Düzenle</a>
+                        <asp:LinkButton ID="lbtn_duzenle" runat="server" CssClass="duzenle" CommandArgument='<%# Eval("KategoriID")%>' CommandName="durum">Durum Düzenle</asp:LinkButton>
+                        <asp:LinkButton ID="lbtn_sil" runat="server" CssClass="sil" CommandArgument='<%# Eval("KategoriID")%>' CommandName="sil">Sil</asp:LinkButton>
                     </td>
                 </tr>
             </ItemTemplate>
@@ -40,8 +41,9 @@
                     <td><%# Eval("Durum") %></td>
                     <td><%# Eval("Silinmis") %></td>
                     <td>
-                        <asp:LinkButton ID="lbtn_sil" runat="server" CssClass="sil" CommandArgument='<% Eval("KategoriID")%>'>Sil</asp:LinkButton>
-                        <asp:LinkButton ID="lbtn_duzenle" runat="server" CssClass="duzenle" CommandArgument='<% Eval("KategoriID")%>'>Durum Düzenle</asp:LinkButton>
+                        <a href='kategoriDuzenle.aspx?KategoriID=<%# Eval("KategoriID") %>' class="geriAl">Kategori Düzenle</a>
+                        <asp:LinkButton ID="lbtn_duzenle" runat="server" CssClass="duzenle" CommandArgument='<%# Eval("KategoriID")%>' CommandName="durum">Durum Düzenle</asp:LinkButton>
+                        <asp:LinkButton ID="lbtn_sil" runat="server" CssClass="sil" CommandArgument='<%# Eval("KategoriID")%>' CommandName="sil">Sil</asp:LinkButton>
                     </td>
                 </tr>
             </AlternatingItemTemplate>
@@ -72,7 +74,7 @@
                     <td><%# Eval("Durum") %></td>
                     <td><%# Eval("Silinmis") %></td>
                     <td>
-                        <asp:LinkButton ID="lbtn_geriAl" runat="server" CssClass="geriAl" CommandArgument='<% Eval("KategoriID")%>'>Geri Al</asp:LinkButton>
+                        <asp:LinkButton ID="lbtn_geriAl" runat="server" CssClass="geriAl" CommandArgument='<%# Eval("KategoriID")%>' CommandName="SilinmisiGeriAl">Geri Al</asp:LinkButton>
                     </td>
                 </tr>
             </ItemTemplate>
@@ -83,7 +85,7 @@
                     <td><%# Eval("Durum") %></td>
                     <td><%# Eval("Silinmis") %></td>
                     <td>
-                        <asp:LinkButton ID="lbtn_geriAl" runat="server" CssClass="geriAl" CommandArgument='<% Eval("KategoriID")%>'>Geri Al</asp:LinkButton>
+                        <asp:LinkButton ID="lbtn_geriAl" runat="server" CssClass="geriAl" CommandArgument='<%# Eval("KategoriID")%>' CommandName="SilinmisiGeriAl">Geri Al</asp:LinkButton>
                     </td>
                 </tr>
             </AlternatingItemTemplate>

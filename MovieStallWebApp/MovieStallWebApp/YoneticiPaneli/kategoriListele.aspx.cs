@@ -22,14 +22,32 @@ namespace MovieStallWebApp.YoneticiPaneli
         protected void lv_kategorilerAktif_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             int idAktif = Convert.ToInt32(e.CommandArgument);
-            vrktmn.kategoriSil(idAktif);
+            if (e.CommandName == "sil")
+            {
+                vrktmn.kategoriSil(idAktif);
+            }
+            if (e.CommandName == "durum")
+            {
+                vrktmn.kategoriDuzenle(idAktif);
+            }
             lv_kategorilerAktif.DataSource = vrktmn.kategoriListele(false);
             lv_kategorilerAktif.DataBind();
+            lv_kategorilerSilinmis.DataSource = vrktmn.kategoriListele(true);
+            lv_kategorilerSilinmis.DataBind();
+
         }
 
         protected void lv_kategorilerSilinmis_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
-            //int idGeriAl = Convert.ToInt32(e.CommandArgument);
+            int idGeriAl = Convert.ToInt32(e.CommandArgument);
+            if (e.CommandName == "SilinmisiGeriAl")
+            {
+                vrktmn.kategoriSilinmisGeriAl(idGeriAl);
+            }
+            lv_kategorilerAktif.DataSource = vrktmn.kategoriListele(false);
+            lv_kategorilerAktif.DataBind();
+            lv_kategorilerSilinmis.DataSource = vrktmn.kategoriListele(true);
+            lv_kategorilerSilinmis.DataBind();
         }
     }
 }

@@ -24,8 +24,8 @@ namespace MovieStallWebApp.YoneticiPaneli
                 kategori K = new kategori();
                 K.KategoriIsmi = tb_kategoriadi.Text;
                 K.Durum = cb_durum.Checked;
-                K.Silinmis = cb_silinmis.Checked;
-               if(vrktmn.kategoriEkle(K))
+                K.Silinmis = false;
+                if (vrktmn.kategoriEkle(K))
                 {
                     lbl_bilgi.Visible = true;
                     lbl_bilgi.Text = "Kategori Başarılı Şekilde Eklendi";

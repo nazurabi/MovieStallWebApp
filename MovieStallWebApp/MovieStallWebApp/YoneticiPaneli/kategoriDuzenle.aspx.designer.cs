@@ -11,7 +11,7 @@ namespace MovieStallWebApp.YoneticiPaneli
 {
 
 
-    public partial class kategoriEkle
+    public partial class kategoriDuzenle
     {
 
         /// <summary>
@@ -33,13 +33,13 @@ namespace MovieStallWebApp.YoneticiPaneli
         protected global::System.Web.UI.WebControls.CheckBox cb_durum;
 
         /// <summary>
-        /// lbtn_ekle control.
+        /// lbtn_duzenle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_ekle;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_duzenle;
 
         /// <summary>
         /// lbl_bilgi control.

@@ -95,8 +95,6 @@ namespace VeriErisimKatmani
                 con.Close();
             }
         }
-
-
         public List<kategori> kategoriListele()
         {
             List<kategori> kategoriler = new List<kategori>();
@@ -106,13 +104,13 @@ namespace VeriErisimKatmani
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader okuyucu = cmd.ExecuteReader();
-                while(okuyucu.Read())
+                while (okuyucu.Read())
                 {
                     kategori ktgr = new kategori();
                     ktgr.KategoriID = okuyucu.GetInt32(0);
                     ktgr.KategoriIsmi = okuyucu.GetString(1);
                     ktgr.Durum = okuyucu.GetBoolean(2);
-                    ktgr.Silinmis= okuyucu.GetBoolean(3);
+                    ktgr.Silinmis = okuyucu.GetBoolean(3);
                     kategoriler.Add(ktgr);
                 }
                 return kategoriler;
@@ -127,7 +125,6 @@ namespace VeriErisimKatmani
                 con.Close();
             }
         }
-
         public List<kategori> kategoriListele(bool silinmis)
         {
             List<kategori> kategoriler = new List<kategori>();
@@ -159,6 +156,39 @@ namespace VeriErisimKatmani
                 con.Close();
             }
         }
+        public List<kategori> kategoriListele(bool silinmis, bool durum)
+        {
+            List<kategori> kategoriler = new List<kategori>();
+            try
+            {
+                cmd.CommandText = "SELECT KategoriID,KategoriIsmi,Durum,Silinmis FROM Kategoriler WHERE Silinmis=@Silinmis AND Durum=@durum";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Silinmis", silinmis);
+                cmd.Parameters.AddWithValue("@Durum", durum);
+                con.Open();
+                SqlDataReader okuyucu = cmd.ExecuteReader();
+                while (okuyucu.Read())
+                {
+                    kategori ktgr = new kategori();
+                    ktgr.KategoriID = okuyucu.GetInt32(0);
+                    ktgr.KategoriIsmi = okuyucu.GetString(1);
+                    ktgr.Durum = okuyucu.GetBoolean(2);
+                    ktgr.Silinmis = okuyucu.GetBoolean(3);
+                    kategoriler.Add(ktgr);
+                }
+                return kategoriler;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         public void kategoriSil(int id)
         {
             try
@@ -169,17 +199,139 @@ namespace VeriErisimKatmani
                 con.Open();
                 cmd.ExecuteNonQuery();
             }
-       finally
+            finally
             {
                 con.Close();
             }
         }
+        public void kategoriDuzenle(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT Durum FROM Kategoriler WHERE KategoriID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                bool durum = Convert.ToBoolean(cmd.ExecuteScalar());
+                cmd.CommandText = "UPDATE Kategoriler SET Durum=@durum WHERE KategoriID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@durum", !durum);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
 
+            }
+            finally
+            {
+
+                con.Close();
+            }
+        }
+        public void kategoriSilinmisGeriAl(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT Silinmis FROM Kategoriler WHERE KategoriID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                bool silinmis = Convert.ToBoolean(cmd.ExecuteScalar());
+                cmd.CommandText = "UPDATE Kategoriler SET Silinmis=@silinmis WHERE KategoriID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@silinmis", !silinmis);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public kategori kategoriGetir(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT KategoriID,KategoriIsmi,Durum,Silinmis FROM Kategoriler WHERE KategoriID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                SqlDataReader okuyucu = cmd.ExecuteReader();
+                kategori ktgr = new kategori();
+                while (okuyucu.Read())
+                {
+                    ktgr.KategoriID = okuyucu.GetInt32(0);
+                    ktgr.KategoriIsmi = okuyucu.GetString(1);
+                    ktgr.Durum = okuyucu.GetBoolean(2);
+                    ktgr.Silinmis = okuyucu.GetBoolean(3);
+                }
+                return ktgr;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public bool kategoriGuncelle(kategori K)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Kategoriler SET KategoriIsmi=@isim,Durum=@durum WHERE KategoriID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", K.KategoriID);
+                cmd.Parameters.AddWithValue("@isim", K.KategoriIsmi);
+                cmd.Parameters.AddWithValue("@durum", K.Durum);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         #endregion
 
+        #region Tür Metodu
 
-
-
-
+        public List<tur> turListele()
+        {
+            List<tur> turler = new List<tur>();
+            try
+            {
+                cmd.CommandText = "SELECT TurID,TurIsmi FROM Turler";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader okuyucu = cmd.ExecuteReader();
+                while (okuyucu.Read())
+                {
+                    tur tr = new tur();
+                    tr.TurID = okuyucu.GetInt32(0);
+                    tr.TurIsmi = okuyucu.GetString(1);
+                    turler.Add(tr);
+                }
+                return turler;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        #endregion
     }
 }
