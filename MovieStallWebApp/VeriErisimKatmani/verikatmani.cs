@@ -188,7 +188,6 @@ namespace VeriErisimKatmani
                 con.Close();
             }
         }
-
         public void kategoriSil(int id)
         {
             try
@@ -332,6 +331,80 @@ namespace VeriErisimKatmani
                 con.Close();
             }
         }
+        #endregion
+
+        #region Eser Metodları
+
+        public bool eserEkle(eser E)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO EserBilgisi(TurIDFK,KategoriIDFK,Isim,Yil,ImdbPuani,VizyonTarihi,Konusu,Oyuncular,Yonetmen,GoruntulemeSayisi,KapakResmi) VALUES(@turIDFK,@kategoriIDFK,@isim,@yil,@imdbPuani,@vizyonTarihi,@konusu,@oyuncular,@yonetmen,@goruntulemeSayisi,@kapakResmi)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@turIDFK", E.TurIDFK);
+                //cmd.Parameters.AddWithValue("@turIsmi", E.TurIsmi);
+                cmd.Parameters.AddWithValue("@kategoriIDFK",E.KategoriIDFK );
+                //cmd.Parameters.AddWithValue("@kategoriIsmi",E.KategoriIsmi );
+                cmd.Parameters.AddWithValue("@isim", E.Isim);
+                cmd.Parameters.AddWithValue("@yil",E.Yil );
+                cmd.Parameters.AddWithValue("@imdbPuani",E.ImdbPuani);
+                cmd.Parameters.AddWithValue("@vizyonTarihi",E.VizyonTarihi);
+                cmd.Parameters.AddWithValue("@konusu",E.Konusu );
+                cmd.Parameters.AddWithValue("@oyuncular",E.Oyuncular);
+                cmd.Parameters.AddWithValue("@yonetmen",E.Yonetmen );
+                cmd.Parameters.AddWithValue("@goruntulemeSayisi",E.GoruntulemeSayisi);
+                cmd.Parameters.AddWithValue("@kapakResmi",E.KapakResmi);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true; ;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public List<eser> eserListele(bool durum)
+        {
+            List<eser> eserler = new List<eser>();
+            try
+            {
+                INSERT INTO EserBilgisi(TurIDFK, KategoriIDFK, Isim, Yil, ImdbPuani, VizyonTarihi, Konusu, Oyuncular, Yonetmen, GoruntulemeSayisi, KapakResmi) VALUES(@turIDFK, @kategoriIDFK, @isim, @yil, @imdbPuani, @vizyonTarihi, @konusu, @oyuncular, @yonetmen, @goruntulemeSayisi, @kapakResmi)";
+
+
+                cmd.CommandText = "SELECT TurIDFK, KategoriIDFK, Isim, Yil, ImdbPuani, VizyonTarihi, Konusu, Oyuncular, Yonetmen, GoruntulemeSayisi, KapakResmi FROM EserBilgisi WHERE Durum=@durum";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@durum", durum);
+                con.Open();
+                SqlDataReader okuyucu = cmd.ExecuteReader();
+                while (okuyucu.Read())
+                {
+                    eser E = new eser();
+                    E.KategoriID = okuyucu.GetInt32(0);
+                    E.KategoriIsmi = okuyucu.GetString(1);
+                    E.Durum = okuyucu.GetBoolean(2);
+                    E.Silinmis = okuyucu.GetBoolean(3);
+                    eserler.Add(E);
+                }
+                return eserler;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
         #endregion
     }
 }

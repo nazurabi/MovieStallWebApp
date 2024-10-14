@@ -34,7 +34,7 @@ namespace MovieStallWebApp.YoneticiPaneli
                 else
                 {
                     lbl_bilgi.Visible = true;
-                    lbl_bilgi.Text = "Kategori Adı Boş Bırakılamaz";
+                    lbl_bilgi.Text = "Kategori Eklenirken Bir Hata Oluştu";
                     lbl_bilgi.BackColor = System.Drawing.Color.Red;
                 }
             }

@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/YoneticiPaneli/yoneticipnl.Master" AutoEventWireup="true" CodeBehind="eserEkle.aspx.cs" Inherits="MovieStallWebApp.YoneticiPaneli.eserEkle" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/YoneticiPaneli/yoneticipnl.Master" AutoEventWireup="true" CodeBehind="eserEkle.aspx.cs" Inherits="MovieStallWebApp.YoneticiPaneli.eserEkle" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/formStil.css" rel="stylesheet" />
+    <script src="ckeditor/ckeditor.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -22,38 +23,47 @@
             </div>
             <div class="satir">
                 <label>İsmi</label><br />
-                <asp:TextBox ID="tb_kategoriadi" runat="server" CssClass="metinkutu"></asp:TextBox><br />
+                <asp:TextBox ID="tb_eserAdi" runat="server" CssClass="metinkutu"></asp:TextBox><br />
             </div>
             <div class="satir">
                 <label>Yıl</label><br />
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="metinkutu"></asp:TextBox><br />
+                <asp:TextBox ID="tb_yil" runat="server" CssClass="metinkutu"></asp:TextBox><br />
             </div>
             <div class="satir">
                 <label>İMDB Puanı</label><br />
-                <asp:TextBox ID="TextBox2" runat="server" CssClass="metinkutu"></asp:TextBox><br />
+                <asp:TextBox ID="tb_imdb" runat="server" CssClass="metinkutu"></asp:TextBox><br />
             </div>
             <div class="satir">
                 <label>Vizyon Tarihi</label><br />
-                <asp:TextBox ID="TextBox3" runat="server" CssClass="metinkutu"></asp:TextBox><br />
+                <asp:TextBox ID="tb_vizyonTarihi" runat="server" CssClass="metinkutu"></asp:TextBox><br />
             </div>
             <div class="satir">
                 <label>Konusu</label><br />
                 <asp:TextBox ID="tb_konu" runat="server" CssClass="metinkutu" TextMode="MultiLine"></asp:TextBox><br />
+           <script>
+               CKEDITOR.replace('ContentPlaceHolder1_tb_konu');
+           </script>
+                </div>
+            <div class="satir">
+                <label>Oyuncular</label><br />
+                <asp:TextBox ID="tb_oyuncular" runat="server" CssClass="metinkutu" TextMode="MultiLine"></asp:TextBox><br />
+            </div>
+            <div class="satir">
+                <label>Yönetmen</label><br />
+                <asp:TextBox ID="tb_yonetmen" runat="server" CssClass="metinkutu" TextMode="MultiLine"></asp:TextBox><br />
             </div>
             <div class="satir">
                 <label>Kapak Resmi</label><br />
                 <asp:FileUpload ID="fu_resim" runat="server" CssClass="metinkutu"></asp:FileUpload><br />
             </div>
-
-
-
-
-
-
             <div class="satir">
-                <%--     <asp:LinkButton ID="lbtn_ekle" runat="server" CssClass="islembuton" OnClick="lbtn_ekle_Click">Kategori Ekle</asp:LinkButton>
-               <asp:Label ID="lbl_bilgi" runat="server" CssClass="bilgipaneli" Visible="false">Kategori Başarılı Şekilde Eklendi</asp:Label>--%>
+                <asp:LinkButton ID="lbtn_eserEkle" runat="server" CssClass="islembuton" OnClick="lbtn_eserEkle_Click">Eser Ekle</asp:LinkButton>
+                <asp:Label ID="lbl_bilgi" runat="server" CssClass="bilgipaneli" Visible="false">Eser Başarılı Şekilde Eklendi</asp:Label>
             </div>
+
+
+
+
         </div>
     </div>
 
