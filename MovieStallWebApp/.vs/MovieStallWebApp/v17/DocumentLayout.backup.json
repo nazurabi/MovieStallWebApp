@@ -9,11 +9,11 @@
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 233,
+          "DockedHeight": 200,
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -26,7 +26,7 @@
               "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\giris.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-10-13T21:50:23.432Z",
+              "WhenOpened": "2024-10-15T21:47:21.406Z",
               "EditorCaption": ""
             }
           ]

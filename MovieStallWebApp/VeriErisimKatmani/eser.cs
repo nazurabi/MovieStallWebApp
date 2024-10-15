@@ -22,6 +22,10 @@ namespace VeriErisimKatmani
         public string Yonetmen { get; set; }
         public long GoruntulemeSayisi { get; set; }
         public string KapakResmi { get; set; }
-
+        public string Yorum { get; set; }
+        public string MovieStallPuani { get; set; }
+        public string EklemeTarihi { get; set; }
+        public string KullaniciAdi { get; set; }
+        public string Avatar { get; set; }
     }
 }

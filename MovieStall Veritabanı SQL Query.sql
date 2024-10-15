@@ -104,22 +104,18 @@ CONSTRAINT fk_izlediklerim FOREIGN KEY(Izlediklerim) REFERENCES EserBilgisi(Eser
 CONSTRAINT fk_izlenecekler FOREIGN KEY(Izlenecekler) REFERENCES EserBilgisi(EserBilgisiID)
 )
 GO
+INSERT INTO Uyeler (Isim, Soyisim,KullaniciAdi,Mail,Sifre,Durum,Silinmis)
+VALUES ('Murtaza','MURTOÐLU','murmurt','murtazamurtoglu@gmail.com','1234',1,0)
+GO
 CREATE TABLE Yorumlar(
 YrmID int IDENTITY(1,1),
 UyeIDFK int,
+EserBilgisiIDFK int,
 Yorum nvarchar(max),
 EklemeTarihi date,
 MovieStallPuani nvarchar(2),
 Durum bit,
 CONSTRAINT pk_yorum PRIMARY KEY (YrmID),
 CONSTRAINT fk_uye FOREIGN KEY(UyeIDFK) REFERENCES Uyeler(UyeID),
-)
-GO
-CREATE TABLE Eserler(
-EserlerID int IDENTITY(1,1),
-EserBilgisiIDFK int,
-YorumIDFK int,
-CONSTRAINT pk_eserler PRIMARY KEY (EserlerID),
-CONSTRAINT fk_eserbilgisi FOREIGN KEY (EserBilgisiIDFK) REFERENCES EserBilgisi(EserBilgisiID),
-CONSTRAINT fk_yorum FOREIGN KEY (YorumIDFK) REFERENCES Yorumlar(YrmID)
+CONSTRAINT fk_eserbilgisi FOREIGN KEY (EserBilgisiIDFK) REFERENCES EserBilgisi(EserBilgisiID)
 )

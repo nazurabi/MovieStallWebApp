@@ -387,6 +387,7 @@
     <Content Include="YoneticiPaneli\css\listeStil.css" />
     <Content Include="YoneticiPaneli\css\yoneticipnlsitili.css" />
     <Content Include="YoneticiPaneli\eserEkle.aspx" />
+    <Content Include="YoneticiPaneli\eserListele.aspx" />
     <Content Include="YoneticiPaneli\giris.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -404,6 +405,13 @@
     </Compile>
     <Compile Include="YoneticiPaneli\eserEkle.aspx.designer.cs">
       <DependentUpon>eserEkle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\eserListele.aspx.cs">
+      <DependentUpon>eserListele.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\eserListele.aspx.designer.cs">
+      <DependentUpon>eserListele.aspx</DependentUpon>
     </Compile>
     <Compile Include="YoneticiPaneli\giris.aspx.cs">
       <DependentUpon>giris.aspx</DependentUpon>

@@ -343,17 +343,17 @@ namespace VeriErisimKatmani
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@turIDFK", E.TurIDFK);
                 //cmd.Parameters.AddWithValue("@turIsmi", E.TurIsmi);
-                cmd.Parameters.AddWithValue("@kategoriIDFK",E.KategoriIDFK );
+                cmd.Parameters.AddWithValue("@kategoriIDFK", E.KategoriIDFK);
                 //cmd.Parameters.AddWithValue("@kategoriIsmi",E.KategoriIsmi );
                 cmd.Parameters.AddWithValue("@isim", E.Isim);
-                cmd.Parameters.AddWithValue("@yil",E.Yil );
-                cmd.Parameters.AddWithValue("@imdbPuani",E.ImdbPuani);
-                cmd.Parameters.AddWithValue("@vizyonTarihi",E.VizyonTarihi);
-                cmd.Parameters.AddWithValue("@konusu",E.Konusu );
-                cmd.Parameters.AddWithValue("@oyuncular",E.Oyuncular);
-                cmd.Parameters.AddWithValue("@yonetmen",E.Yonetmen );
-                cmd.Parameters.AddWithValue("@goruntulemeSayisi",E.GoruntulemeSayisi);
-                cmd.Parameters.AddWithValue("@kapakResmi",E.KapakResmi);
+                cmd.Parameters.AddWithValue("@yil", E.Yil);
+                cmd.Parameters.AddWithValue("@imdbPuani", E.ImdbPuani);
+                cmd.Parameters.AddWithValue("@vizyonTarihi", E.VizyonTarihi);
+                cmd.Parameters.AddWithValue("@konusu", E.Konusu);
+                cmd.Parameters.AddWithValue("@oyuncular", E.Oyuncular);
+                cmd.Parameters.AddWithValue("@yonetmen", E.Yonetmen);
+                cmd.Parameters.AddWithValue("@goruntulemeSayisi", E.GoruntulemeSayisi);
+                cmd.Parameters.AddWithValue("@kapakResmi", E.KapakResmi);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 return true; ;
@@ -369,26 +369,36 @@ namespace VeriErisimKatmani
             }
         }
 
-        public List<eser> eserListele(bool durum)
+        public List<eser> eserListele()
         {
             List<eser> eserler = new List<eser>();
             try
             {
-                INSERT INTO EserBilgisi(TurIDFK, KategoriIDFK, Isim, Yil, ImdbPuani, VizyonTarihi, Konusu, Oyuncular, Yonetmen, GoruntulemeSayisi, KapakResmi) VALUES(@turIDFK, @kategoriIDFK, @isim, @yil, @imdbPuani, @vizyonTarihi, @konusu, @oyuncular, @yonetmen, @goruntulemeSayisi, @kapakResmi)";
 
-
-                cmd.CommandText = "SELECT TurIDFK, KategoriIDFK, Isim, Yil, ImdbPuani, VizyonTarihi, Konusu, Oyuncular, Yonetmen, GoruntulemeSayisi, KapakResmi FROM EserBilgisi WHERE Durum=@durum";
+                cmd.CommandText = "SELECT EserBilgisiID ,TurIDFK ,KategoriIDFK ,E.Isim ,Yil ,ImdbPuani ,VizyonTarihi ,Konusu ,Oyuncular ,Yonetmen ,GoruntulemeSayisi ,KapakResmi ,Yorum , MovieStallPuani , EklemeTarihi ,KullaniciAdi ,Avatar FROM EserBilgisi AS E LEFT JOIN Yorumlar AS Y ON E.EserBilgisiID= Y.EserBilgisiIDFK LEFT JOIN Uyeler AS U ON U.UyeID= Y.UyeIDFK";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@durum", durum);
                 con.Open();
                 SqlDataReader okuyucu = cmd.ExecuteReader();
                 while (okuyucu.Read())
                 {
                     eser E = new eser();
-                    E.KategoriID = okuyucu.GetInt32(0);
-                    E.KategoriIsmi = okuyucu.GetString(1);
-                    E.Durum = okuyucu.GetBoolean(2);
-                    E.Silinmis = okuyucu.GetBoolean(3);
+                    E.EserBilgisiID = okuyucu.GetInt32(0);
+                    E.TurIDFK = okuyucu.GetInt32(1);
+                    E.KategoriIDFK = okuyucu.GetInt32(2);
+                    E.Isim = okuyucu.GetString(3);
+                    E.Yil = okuyucu.GetString(4);
+                    E.ImdbPuani = okuyucu.GetString(5);
+                    E.VizyonTarihi = okuyucu.GetString(6);
+                    E.Konusu = okuyucu.GetString(7);
+                    E.Oyuncular = okuyucu.GetString(8);
+                    E.Yonetmen = okuyucu.GetString(9);
+                    E.GoruntulemeSayisi = okuyucu.GetInt64(10);
+                    E.KapakResmi = okuyucu.GetString(11);
+                    E.Yorum = okuyucu.GetString(12);
+                    E.MovieStallPuani = okuyucu.GetString(13);
+                    E.EklemeTarihi = okuyucu.GetString(14);
+                    E.KullaniciAdi = okuyucu.GetString(15);
+                    E.Avatar = okuyucu.GetString(16);
                     eserler.Add(E);
                 }
                 return eserler;

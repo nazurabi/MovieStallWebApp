@@ -33,7 +33,7 @@
                 <a href="kategoriListele.aspx">Kategori Listele</a>
                 <hr />
                 <a href="eserEkle.aspx">Eser Ekle</a>
-                <a href="EserListele.aspx">Eser Listele</a>
+                <a href="eserListele.aspx">Eser Listele</a>
                 <hr />
                 <a href="yoneticiDefault.aspx">Üyeler</a>
                 <a href="yoneticiDefault.aspx">Yorumlar</a>
