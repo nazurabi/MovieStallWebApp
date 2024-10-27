@@ -19,8 +19,8 @@ namespace MovieStallWebApp.YoneticiPaneli
                 ddl_tur.DataSource = vrktmn.turListele();
                 ddl_tur.DataBind();
 
-                ddl_kategori.DataSource = vrktmn.kategoriListele(false, true);
-                ddl_kategori.DataBind();
+                //ddl_kategori.DataSource = vrktmn.kategoriListele(false, true);
+                //ddl_kategori.DataBind();
             }
         }
 
@@ -31,15 +31,15 @@ namespace MovieStallWebApp.YoneticiPaneli
                 eser E = new eser();
                 E.TurIDFK = Convert.ToInt32(ddl_tur.SelectedItem.Value);
                 E.TurIsmi = ddl_tur.SelectedItem.Text;
-                E.KategoriIDFK = Convert.ToInt32(ddl_kategori.SelectedItem.Value);
-                E.KategoriIsmi = ddl_kategori.SelectedItem.Text;
+                //E.KategoriIDFK = Convert.ToInt32(ddl_kategori.SelectedItem.Value);
+                //E.KategoriIsmi = ddl_kategori.SelectedItem.Text;
                 E.Isim = tb_eserAdi.Text;
                 E.Yil = tb_yil.Text;
                 E.ImdbPuani = tb_imdb.Text;
                 E.VizyonTarihi = tb_vizyonTarihi.Text;
                 E.Konusu = tb_konu.Text;
-                E.Oyuncular = tb_oyuncular.Text;
-                E.Yonetmen = tb_yonetmen.Text;
+                //E.Oyuncular = tb_oyuncular.Text;
+                //E.Yonetmen = tb_yonetmen.Text;
                 E.GoruntulemeSayisi = 0;
                 if (fu_resim.HasFile)
                 {

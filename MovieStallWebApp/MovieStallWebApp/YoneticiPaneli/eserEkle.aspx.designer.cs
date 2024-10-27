@@ -24,15 +24,6 @@ namespace MovieStallWebApp.YoneticiPaneli
         protected global::System.Web.UI.WebControls.DropDownList ddl_tur;
 
         /// <summary>
-        /// ddl_kategori control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_kategori;
-
-        /// <summary>
         /// tb_eserAdi control.
         /// </summary>
         /// <remarks>
@@ -76,24 +67,6 @@ namespace MovieStallWebApp.YoneticiPaneli
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_konu;
-
-        /// <summary>
-        /// tb_oyuncular control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_oyuncular;
-
-        /// <summary>
-        /// tb_yonetmen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_yonetmen;
 
         /// <summary>
         /// fu_resim control.

@@ -12,8 +12,7 @@ namespace MovieStallWebApp.YoneticiPaneli
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //lbl_bilgi.Text = "Kategori Eklenemedi";
-            //lbl_bilgi.BackColor = System.Drawing.Color.Red;
+           
         }
 
         protected void lbtn_ekle_Click(object sender, EventArgs e)

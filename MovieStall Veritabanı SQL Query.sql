@@ -39,7 +39,6 @@ INSERT INTO Turler (TurIsmi) VALUES ('Film')
 INSERT INTO Turler (TurIsmi) VALUES ('Dizi')
 INSERT INTO Turler (TurIsmi) VALUES ('Kýsa Film')
 INSERT INTO Turler (TurIsmi) VALUES ('Belgesel')
-
 GO
 CREATE TABLE Kategoriler(
 KategoriID int IDENTITY(1,1),
@@ -48,7 +47,6 @@ Durum bit,
 Silinmis bit,
 CONSTRAINT pk_kategoriler PRIMARY KEY (KategoriID),
 )
-GO
 INSERT INTO Kategoriler(KategoriIsmi,Durum,Silinmis) VALUES ( 'Aile',1,0 )
 INSERT INTO Kategoriler(KategoriIsmi,Durum,Silinmis) VALUES ( 'Aksiyon',1,0 )
 INSERT INTO Kategoriler(KategoriIsmi,Durum,Silinmis) VALUES ( 'Animasyon',1,0 )
@@ -72,19 +70,66 @@ GO
 CREATE TABLE EserBilgisi(
 EserBilgisiID int IDENTITY(1,1),
 TurIDFK int,
-KategoriIDFK int,
 Isim nvarchar(75),
 Yil nvarchar (4),
 ImdbPuani nvarchar(3),
 VizyonTarihi nvarchar(15),
 Konusu nvarchar(max),
-Oyuncular nvarchar(225),
-Yonetmen nvarchar(75),
 GoruntulemeSayisi bigint,
 KapakResmi nvarchar(max),
 CONSTRAINT pk_eser PRIMARY KEY(EserBilgisiID),
-CONSTRAINT fk_tur FOREIGN KEY(TurIDFK) REFERENCES Turler(TurID),
-CONSTRAINT fk_kategori FOREIGN KEY(KategoriIDFK) REFERENCES Kategoriler(KategoriID)
+CONSTRAINT fk_tur FOREIGN KEY(TurIDFK) REFERENCES Turler(TurID)
+)
+GO
+CREATE TABLE KategoriyeAitFilmler(
+KEserID int IDENTITY(1,1),
+KategoriIDFK int,
+EserBilgisiIDFK int,
+CONSTRAINT pk_keser PRIMARY KEY (KEserID),
+CONSTRAINT fk_kategori FOREIGN KEY(KategoriIDFK) REFERENCES Kategoriler(KategoriID),
+CONSTRAINT fk_eserbilgisikat FOREIGN KEY(EserBilgisiIDFK) REFERENCES EserBilgisi(EserBilgisiID)
+)
+GO
+CREATE TABLE Oyuncular(
+OyuncuID int IDENTITY(1,1),
+OyuncuIsmi nvarchar(30),
+OyuncuSoyisim nvarchar(30),
+Cinsiyet nvarchar(5),
+Biyografi nvarchar(max),
+DogumTarihi nvarchar(15),
+DogumYeri nvarchar(50),
+KapakResmi nvarchar(max),
+CONSTRAINT pk_oyuncular PRIMARY KEY(OyuncuID)
+)
+GO
+CREATE TABLE OyuncununFilmleri(
+OFID int IDENTITY(1,1),
+OyuncuIDFK int,
+EserBilgisiIDFK int,
+CONSTRAINT pk_ofid PRIMARY KEY (OFID),
+CONSTRAINT fk_oyuncu FOREIGN KEY(OyuncuIDFK) REFERENCES Oyuncular(OyuncuID),
+CONSTRAINT fk_eserbilgisiof FOREIGN KEY(EserBilgisiIDFK) REFERENCES EserBilgisi(EserBilgisiID)
+)
+GO
+CREATE TABLE Yonetmenler(
+YonetmenID int IDENTITY(1,1),
+YonetmenIsmi nvarchar(30),
+YonetmenSoyisim nvarchar(30),
+Cinsiyet nvarchar(5),
+Biyografi nvarchar(max),
+DogumTarihi nvarchar(15),
+DogumYeri nvarchar(50),
+KapakResmi nvarchar(max),
+CONSTRAINT pk_yonetmen PRIMARY KEY(YonetmenID)
+)
+GO
+CREATE TABLE YonetmeninFilmleri(
+YFID int IDENTITY(1,1),
+YonetmenIDFK int,
+EserBilgisiIDFK int,
+CONSTRAINT pk_yfid PRIMARY KEY (YFID),
+CONSTRAINT fk_yonetmen FOREIGN KEY(YonetmenIDFK) REFERENCES Yonetmenler(YonetmenID),
+CONSTRAINT fk_eserbilgisiyf FOREIGN KEY(EserBilgisiIDFK) REFERENCES EserBilgisi(EserBilgisiID)
 )
 GO
 CREATE TABLE Uyeler(
@@ -117,5 +162,20 @@ MovieStallPuani nvarchar(2),
 Durum bit,
 CONSTRAINT pk_yorum PRIMARY KEY (YrmID),
 CONSTRAINT fk_uye FOREIGN KEY(UyeIDFK) REFERENCES Uyeler(UyeID),
-CONSTRAINT fk_eserbilgisi FOREIGN KEY (EserBilgisiIDFK) REFERENCES EserBilgisi(EserBilgisiID)
+CONSTRAINT fk_eserbilgisiyrm FOREIGN KEY (EserBilgisiIDFK) REFERENCES EserBilgisi(EserBilgisiID)
 )
+GO
+--CREATE TABLE Eserler(
+--EserlerID int IDENTITY(1,1),
+--EserBilgisiIDFK int not null,
+--KategoriIDFK int not null,
+--OyuncuIDFK int not null,
+--YonetmenIDFK int not null,
+--YorumIDFK int,
+--CONSTRAINT pk_eserler PRIMARY KEY (EserlerID),
+--CONSTRAINT fk_eserbilgisi FOREIGN KEY (EserBilgisiIDFK) REFERENCES EserBilgisi(EserBilgisiID),
+--CONSTRAINT fk_kategoriler FOREIGN KEY (KategoriIDFK) REFERENCES Kategoriler(KategoriID),
+--CONSTRAINT fk_oyuncu FOREIGN KEY (OyuncuIDFK) REFERENCES Oyuncular(OyuncuID),
+--CONSTRAINT fk_yonetmen FOREIGN KEY (YonetmenIDFK) REFERENCES Yonetmenler(YonetmenID),
+--CONSTRAINT fk_yorum FOREIGN KEY (YorumIDFK) REFERENCES Yorumlar(YrmID)
+--)

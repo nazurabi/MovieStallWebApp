@@ -95,36 +95,37 @@ namespace VeriErisimKatmani
                 con.Close();
             }
         }
-        public List<kategori> kategoriListele()
-        {
-            List<kategori> kategoriler = new List<kategori>();
-            try
-            {
-                cmd.CommandText = "SELECT KategoriID,KategoriIsmi,Durum,Silinmis FROM Kategoriler";
-                cmd.Parameters.Clear();
-                con.Open();
-                SqlDataReader okuyucu = cmd.ExecuteReader();
-                while (okuyucu.Read())
-                {
-                    kategori ktgr = new kategori();
-                    ktgr.KategoriID = okuyucu.GetInt32(0);
-                    ktgr.KategoriIsmi = okuyucu.GetString(1);
-                    ktgr.Durum = okuyucu.GetBoolean(2);
-                    ktgr.Silinmis = okuyucu.GetBoolean(3);
-                    kategoriler.Add(ktgr);
-                }
-                return kategoriler;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Bir Hata Oluştu" + ex);
-                return null;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
+
+        //public List<kategori> kategoriListele()
+        //{
+        //    List<kategori> kategoriler = new List<kategori>();
+        //    try
+        //    {
+        //        cmd.CommandText = "SELECT KategoriID,KategoriIsmi,Durum,Silinmis FROM Kategoriler";
+        //        cmd.Parameters.Clear();
+        //        con.Open();
+        //        SqlDataReader okuyucu = cmd.ExecuteReader();
+        //        while (okuyucu.Read())
+        //        {
+        //            kategori ktgr = new kategori();
+        //            ktgr.KategoriID = okuyucu.GetInt32(0);
+        //            ktgr.KategoriIsmi = okuyucu.GetString(1);
+        //            ktgr.Durum = okuyucu.GetBoolean(2);
+        //            ktgr.Silinmis = okuyucu.GetBoolean(3);
+        //            kategoriler.Add(ktgr);
+        //        }
+        //        return kategoriler;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine("Bir Hata Oluştu" + ex);
+        //        return null;
+        //    }
+        //    finally
+        //    {
+        //        con.Close();
+        //    }
+        //}
         public List<kategori> kategoriListele(bool silinmis)
         {
             List<kategori> kategoriler = new List<kategori>();
@@ -156,38 +157,39 @@ namespace VeriErisimKatmani
                 con.Close();
             }
         }
-        public List<kategori> kategoriListele(bool silinmis, bool durum)
-        {
-            List<kategori> kategoriler = new List<kategori>();
-            try
-            {
-                cmd.CommandText = "SELECT KategoriID,KategoriIsmi,Durum,Silinmis FROM Kategoriler WHERE Silinmis=@Silinmis AND Durum=@durum";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@Silinmis", silinmis);
-                cmd.Parameters.AddWithValue("@Durum", durum);
-                con.Open();
-                SqlDataReader okuyucu = cmd.ExecuteReader();
-                while (okuyucu.Read())
-                {
-                    kategori ktgr = new kategori();
-                    ktgr.KategoriID = okuyucu.GetInt32(0);
-                    ktgr.KategoriIsmi = okuyucu.GetString(1);
-                    ktgr.Durum = okuyucu.GetBoolean(2);
-                    ktgr.Silinmis = okuyucu.GetBoolean(3);
-                    kategoriler.Add(ktgr);
-                }
-                return kategoriler;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Bir Hata Oluştu" + ex);
-                return null;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
+
+        //public List<kategori> kategoriListele(bool silinmis, bool durum)
+        //{
+        //    List<kategori> kategoriler = new List<kategori>();
+        //    try
+        //    {
+        //        cmd.CommandText = "SELECT KategoriID,KategoriIsmi,Durum,Silinmis FROM Kategoriler WHERE Silinmis=@Silinmis AND Durum=@durum";
+        //        cmd.Parameters.Clear();
+        //        cmd.Parameters.AddWithValue("@Silinmis", silinmis);
+        //        cmd.Parameters.AddWithValue("@Durum", durum);
+        //        con.Open();
+        //        SqlDataReader okuyucu = cmd.ExecuteReader();
+        //        while (okuyucu.Read())
+        //        {
+        //            kategori ktgr = new kategori();
+        //            ktgr.KategoriID = okuyucu.GetInt32(0);
+        //            ktgr.KategoriIsmi = okuyucu.GetString(1);
+        //            ktgr.Durum = okuyucu.GetBoolean(2);
+        //            ktgr.Silinmis = okuyucu.GetBoolean(3);
+        //            kategoriler.Add(ktgr);
+        //        }
+        //        return kategoriler;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine("Bir Hata Oluştu" + ex);
+        //        return null;
+        //    }
+        //    finally
+        //    {
+        //        con.Close();
+        //    }
+        //}
         public void kategoriSil(int id)
         {
             try
@@ -339,19 +341,19 @@ namespace VeriErisimKatmani
         {
             try
             {
-                cmd.CommandText = "INSERT INTO EserBilgisi(TurIDFK,KategoriIDFK,Isim,Yil,ImdbPuani,VizyonTarihi,Konusu,Oyuncular,Yonetmen,GoruntulemeSayisi,KapakResmi) VALUES(@turIDFK,@kategoriIDFK,@isim,@yil,@imdbPuani,@vizyonTarihi,@konusu,@oyuncular,@yonetmen,@goruntulemeSayisi,@kapakResmi)";
+                cmd.CommandText = "INSERT INTO EserBilgisi(TurIDFK,Isim,Yil,ImdbPuani,VizyonTarihi,Konusu,GoruntulemeSayisi,KapakResmi) VALUES(@turIDFK,@isim,@yil,@imdbPuani,@vizyonTarihi,@konusu,@goruntulemeSayisi,@kapakResmi)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@turIDFK", E.TurIDFK);
                 //cmd.Parameters.AddWithValue("@turIsmi", E.TurIsmi);
-                cmd.Parameters.AddWithValue("@kategoriIDFK", E.KategoriIDFK);
+                //cmd.Parameters.AddWithValue("@kategoriIDFK", E.KategoriIDFK);
                 //cmd.Parameters.AddWithValue("@kategoriIsmi",E.KategoriIsmi );
                 cmd.Parameters.AddWithValue("@isim", E.Isim);
                 cmd.Parameters.AddWithValue("@yil", E.Yil);
                 cmd.Parameters.AddWithValue("@imdbPuani", E.ImdbPuani);
                 cmd.Parameters.AddWithValue("@vizyonTarihi", E.VizyonTarihi);
                 cmd.Parameters.AddWithValue("@konusu", E.Konusu);
-                cmd.Parameters.AddWithValue("@oyuncular", E.Oyuncular);
-                cmd.Parameters.AddWithValue("@yonetmen", E.Yonetmen);
+                //cmd.Parameters.AddWithValue("@oyuncular", E.Oyuncular);
+                //cmd.Parameters.AddWithValue("@yonetmen", E.Yonetmen);
                 cmd.Parameters.AddWithValue("@goruntulemeSayisi", E.GoruntulemeSayisi);
                 cmd.Parameters.AddWithValue("@kapakResmi", E.KapakResmi);
                 con.Open();
@@ -369,50 +371,47 @@ namespace VeriErisimKatmani
             }
         }
 
-        public List<eser> eserListele()
-        {
-            List<eser> eserler = new List<eser>();
-            try
-            {
+        //public List<eser> eserListele()
+        //{
+        //    List<eser> eserler = new List<eser>();
+        //    try
+        //    {
 
-                cmd.CommandText = "SELECT EserBilgisiID ,TurIDFK ,KategoriIDFK ,E.Isim ,Yil ,ImdbPuani ,VizyonTarihi ,Konusu ,Oyuncular ,Yonetmen ,GoruntulemeSayisi ,KapakResmi ,Yorum , MovieStallPuani , EklemeTarihi ,KullaniciAdi ,Avatar FROM EserBilgisi AS E LEFT JOIN Yorumlar AS Y ON E.EserBilgisiID= Y.EserBilgisiIDFK LEFT JOIN Uyeler AS U ON U.UyeID= Y.UyeIDFK";
-                cmd.Parameters.Clear();
-                con.Open();
-                SqlDataReader okuyucu = cmd.ExecuteReader();
-                while (okuyucu.Read())
-                {
-                    eser E = new eser();
-                    E.EserBilgisiID = okuyucu.GetInt32(0);
-                    E.TurIDFK = okuyucu.GetInt32(1);
-                    E.KategoriIDFK = okuyucu.GetInt32(2);
-                    E.Isim = okuyucu.GetString(3);
-                    E.Yil = okuyucu.GetString(4);
-                    E.ImdbPuani = okuyucu.GetString(5);
-                    E.VizyonTarihi = okuyucu.GetString(6);
-                    E.Konusu = okuyucu.GetString(7);
-                    E.Oyuncular = okuyucu.GetString(8);
-                    E.Yonetmen = okuyucu.GetString(9);
-                    E.GoruntulemeSayisi = okuyucu.GetInt64(10);
-                    E.KapakResmi = okuyucu.GetString(11);
-                    E.Yorum = okuyucu.GetString(12);
-                    E.MovieStallPuani = okuyucu.GetString(13);
-                    E.EklemeTarihi = okuyucu.GetString(14);
-                    E.KullaniciAdi = okuyucu.GetString(15);
-                    E.Avatar = okuyucu.GetString(16);
-                    eserler.Add(E);
-                }
-                return eserler;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Bir Hata Oluştu" + ex);
-                return null;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
+        //        cmd.CommandText = "SELECT EserBilgisiID ,TurIDFK ,KategoriIDFK ,E.Isim ,Yil ,ImdbPuani ,VizyonTarihi ,Konusu ,Oyuncular ,Yonetmen ,GoruntulemeSayisi ,KapakResmi ,Yorum , MovieStallPuani , EklemeTarihi ,KullaniciAdi ,Avatar FROM EserBilgisi AS E LEFT JOIN Yorumlar AS Y ON E.EserBilgisiID= Y.EserBilgisiIDFK LEFT JOIN Uyeler AS U ON U.UyeID= Y.UyeIDFK";
+        yukarıyı düzenle burada kaldım 28.10.2024
+
+
+        //        cmd.Parameters.Clear();
+        //        con.Open();
+        //        SqlDataReader okuyucu = cmd.ExecuteReader();
+        //        while (okuyucu.Read())
+        //        {
+        //            eser E = new eser();
+        //            E.EserBilgisiID = okuyucu.GetInt32(0);
+        //            E.TurIDFK = okuyucu.GetInt32(1);
+        //            E.TurIsmi = okuyucu.GetInt32(2);
+        //            E.Isim = okuyucu.GetString(3);
+        //            E.Yil = okuyucu.GetString(4);
+        //            E.ImdbPuani = okuyucu.GetString(5);
+        //            E.VizyonTarihi = okuyucu.GetString(6);
+        //            E.Konusu = okuyucu.GetString(7);
+        //            E.GoruntulemeSayisi = okuyucu.GetInt64(10);
+        //            E.KapakResmi = okuyucu.GetString(11);
+        //     
+        //            eserler.Add(E);
+        //        }
+        //        return eserler;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine("Bir Hata Oluştu" + ex);
+        //        return null;
+        //    }
+        //    finally
+        //    {
+        //        con.Close();
+        //    }
+        //}
 
 
         #endregion
