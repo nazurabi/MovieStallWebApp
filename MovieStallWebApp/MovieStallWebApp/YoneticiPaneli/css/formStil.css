@@ -1,6 +1,10 @@
 ﻿.formTasiyici{
 width:800px;
 }
+
+.yoneticiFormTasiyici{
+    width:375px;
+}
 .formBaslik {
     background-color: #ECF0F1;
     padding:10px;
@@ -55,4 +59,8 @@ width:800px;
     border-radius: 5px;
     padding: 5px;
     text-decoration: none;
+}
+.kayitdurum {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

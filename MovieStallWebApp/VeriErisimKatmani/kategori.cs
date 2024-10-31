@@ -12,6 +12,9 @@ namespace VeriErisimKatmani
         public string KategoriIsmi { get; set; }
         public bool Durum { get; set; }
         public bool Silinmis { get; set; }
+        public string YayinDurumGostergesi { get; set; }
+
+        public string SilinmisDurumGostergesi { get; set; }
 
     }
 }

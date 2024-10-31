@@ -15,21 +15,21 @@ namespace MovieStallWebApp.YoneticiPaneli
     {
 
         /// <summary>
-        /// lv_eserler control.
+        /// lv_eserler_aktif control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_eserler;
+        protected global::System.Web.UI.WebControls.ListView lv_eserler_aktif;
 
         /// <summary>
-        /// lv_kategorilerSilinmis control.
+        /// lv_eserler_pasif control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lv_kategorilerSilinmis;
+        protected global::System.Web.UI.WebControls.ListView lv_eserler_pasif;
     }
 }

@@ -32,13 +32,21 @@
                 <a href="kategoriEkle.aspx">Kategori Ekle</a>
                 <a href="kategoriListele.aspx">Kategori Listele</a>
                 <hr />
+                <a href="yonetmenEkle.aspx">Yönetmen Ekle</a>
+                <a href="yonetmenListele.aspx">Yönetmen Listele</a>
+                <hr />
+                <a href="oyuncuEkle.aspx">Oyuncu Ekle</a>
+                <a href="oyuncuListele.aspx">Oyuncu Listele</a>
+                <hr />
                 <a href="eserEkle.aspx">Eser Ekle</a>
                 <a href="eserListele.aspx">Eser Listele</a>
                 <hr />
                 <a href="yoneticiDefault.aspx">Üyeler</a>
                 <a href="yoneticiDefault.aspx">Yorumlar</a>
-                 <hr />
-                 <a href="yoneticiDefault.aspx">Yönetici İşlemleri</a>
+                <hr />
+                <a href="yoneticiEkle.aspx">Yönetici Ekle</a>
+                <a href="yoneticiListele.aspx">Yönetici Listele</a>
+
             </div>
             <div class="anaicerik">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

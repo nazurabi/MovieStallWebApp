@@ -44,10 +44,16 @@
     <Compile Include="baglantiyolu.cs" />
     <Compile Include="eser.cs" />
     <Compile Include="kategori.cs" />
+    <Compile Include="kategoriyeaitfilmler.cs" />
+    <Compile Include="oyuncu.cs" />
+    <Compile Include="oyuncununfilmleri.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="secilenTur.cs" />
     <Compile Include="tur.cs" />
     <Compile Include="verikatmani.cs" />
     <Compile Include="yonetici.cs" />
+    <Compile Include="yonetmen.cs" />
+    <Compile Include="yonetmeninfilmleri.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

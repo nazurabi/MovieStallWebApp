@@ -77,6 +77,7 @@ VizyonTarihi nvarchar(15),
 Konusu nvarchar(max),
 GoruntulemeSayisi bigint,
 KapakResmi nvarchar(max),
+YayinDurum bit,
 CONSTRAINT pk_eser PRIMARY KEY(EserBilgisiID),
 CONSTRAINT fk_tur FOREIGN KEY(TurIDFK) REFERENCES Turler(TurID)
 )
@@ -179,3 +180,12 @@ GO
 --CONSTRAINT fk_yonetmen FOREIGN KEY (YonetmenIDFK) REFERENCES Yonetmenler(YonetmenID),
 --CONSTRAINT fk_yorum FOREIGN KEY (YorumIDFK) REFERENCES Yorumlar(YrmID)
 --)
+
+CREATE TABLE SecilenTur(
+STID int IDENTITY(1,1),
+SonSecilen int,
+CONSTRAINT pk_sonsecilen PRIMARY KEY(STID)
+)
+GO
+INSERT INTO SecilenTur (SonSecilen)
+VALUES (0)

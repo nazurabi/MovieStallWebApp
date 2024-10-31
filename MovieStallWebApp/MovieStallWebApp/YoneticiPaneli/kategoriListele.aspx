@@ -7,7 +7,7 @@
     <div class="sayfaBaslik">
         <h3>Aktif Kategoriler</h3>
     </div>
-    <div class="tabloTasiyici">
+    <div>
         <asp:ListView ID="lv_kategorilerAktif" runat="server" OnItemCommand="lv_kategorilerAktif_ItemCommand">
             <LayoutTemplate>
                 <table cellspacing="0" cellpadding="0" class="tablo">
@@ -16,7 +16,7 @@
                         <th>Kategori İsmi</th>
                         <th>Durum</th>
                         <th>Silinmiş</th>
-                        <th>Seçenekler</th>
+                        <th style="width: 400px;">Seçenekler</th>
                     </tr>
                     <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
                 </table>
@@ -25,10 +25,11 @@
                 <tr>
                     <td><%# Eval("KategoriID") %></td>
                     <td><%# Eval("KategoriIsmi") %></td>
-                    <td><%# Eval("Durum") %></td>
-                    <td><%# Eval("Silinmis") %></td>
+                    <td><%# Eval("YayinDurumGostergesi") %></td>
+                    <td><%# Eval("SilinmisDurumGostergesi") %></td>
                     <td>
                         <a href='kategoriDuzenle.aspx?KategoriID=<%# Eval("KategoriID") %>' class="geriAl">Kategori Düzenle</a>
+                        <a href='kategorininFilmleri.aspx?KategoriID=<%# Eval("KategoriID") %>' class="kategori">Kategoriye Ait Filmler</a>
                         <asp:LinkButton ID="lbtn_duzenle" runat="server" CssClass="duzenle" CommandArgument='<%# Eval("KategoriID")%>' CommandName="durum">Durum Düzenle</asp:LinkButton>
                         <asp:LinkButton ID="lbtn_sil" runat="server" CssClass="sil" CommandArgument='<%# Eval("KategoriID")%>' CommandName="sil">Sil</asp:LinkButton>
                     </td>
@@ -38,10 +39,11 @@
                 <tr class="alternate">
                     <td><%# Eval("KategoriID") %></td>
                     <td><%# Eval("KategoriIsmi") %></td>
-                    <td><%# Eval("Durum") %></td>
-                    <td><%# Eval("Silinmis") %></td>
+                    <td><%# Eval("YayinDurumGostergesi") %></td>
+                    <td><%# Eval("SilinmisDurumGostergesi") %></td>
                     <td>
                         <a href='kategoriDuzenle.aspx?KategoriID=<%# Eval("KategoriID") %>' class="geriAl">Kategori Düzenle</a>
+                        <a href='kategorininFilmleri.aspx?KategoriID=<%# Eval("KategoriID") %>' class="kategori">Kategoriye Ait Filmler</a>
                         <asp:LinkButton ID="lbtn_duzenle" runat="server" CssClass="duzenle" CommandArgument='<%# Eval("KategoriID")%>' CommandName="durum">Durum Düzenle</asp:LinkButton>
                         <asp:LinkButton ID="lbtn_sil" runat="server" CssClass="sil" CommandArgument='<%# Eval("KategoriID")%>' CommandName="sil">Sil</asp:LinkButton>
                     </td>
@@ -53,7 +55,7 @@
     <div class="sayfaBaslik">
         <h3>Silinmiş Kategoriler</h3>
     </div>
-    <div class="tabloTasiyici">
+    <div>
         <asp:ListView ID="lv_kategorilerSilinmis" runat="server" OnItemCommand="lv_kategorilerSilinmis_ItemCommand">
             <LayoutTemplate>
                 <table cellspacing="0" cellpadding="0" class="tablo">
@@ -62,7 +64,7 @@
                         <th>Kategori İsmi</th>
                         <th>Durum</th>
                         <th>Silinmiş</th>
-                        <th>Seçenekler</th>
+                        <th style="width: 275px;">Seçenekler</th>
                     </tr>
                     <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
                 </table>
@@ -71,8 +73,8 @@
                 <tr>
                     <td><%# Eval("KategoriID") %></td>
                     <td><%# Eval("KategoriIsmi") %></td>
-                    <td><%# Eval("Durum") %></td>
-                    <td><%# Eval("Silinmis") %></td>
+                    <td><%# Eval("YayinDurumGostergesi") %></td>
+                    <td><%# Eval("SilinmisDurumGostergesi") %></td>
                     <td>
                         <asp:LinkButton ID="lbtn_geriAl" runat="server" CssClass="geriAl" CommandArgument='<%# Eval("KategoriID")%>' CommandName="SilinmisiGeriAl">Geri Al</asp:LinkButton>
                     </td>
@@ -82,8 +84,8 @@
                 <tr class="alternate">
                     <td><%# Eval("KategoriID") %></td>
                     <td><%# Eval("KategoriIsmi") %></td>
-                    <td><%# Eval("Durum") %></td>
-                    <td><%# Eval("Silinmis") %></td>
+                    <td><%# Eval("YayinDurumGostergesi") %></td>
+                    <td><%# Eval("SilinmisDurumGostergesi") %></td>
                     <td>
                         <asp:LinkButton ID="lbtn_geriAl" runat="server" CssClass="geriAl" CommandArgument='<%# Eval("KategoriID")%>' CommandName="SilinmisiGeriAl">Geri Al</asp:LinkButton>
                     </td>

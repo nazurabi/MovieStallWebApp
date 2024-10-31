@@ -78,6 +78,15 @@ namespace MovieStallWebApp.YoneticiPaneli
         protected global::System.Web.UI.WebControls.FileUpload fu_resim;
 
         /// <summary>
+        /// cb_yayinla control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_yayinla;
+
+        /// <summary>
         /// lbtn_eserEkle control.
         /// </summary>
         /// <remarks>

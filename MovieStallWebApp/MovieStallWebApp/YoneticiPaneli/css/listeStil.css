@@ -6,6 +6,7 @@
 
 .tablo {
     width: 1000px;
+    font-size:12px;
 }
 
     .tablo tr {
@@ -23,21 +24,23 @@
             padding: 10px;
         }
 
-    .tablo alternate td {
-        background-color: #efefef;
+    .tablo .alternate td {
+        background-color: #d8d8d8;
     }
 
 .duzenle {
-    padding:10px;
-    font-size:12px;
-    border-radius:3px;
-    background-color:forestgreen;
-    color:white;
-    text-decoration:none;
+    padding: 8px;
+    margin:5px;
+    font-size: 12px;
+    border-radius: 3px;
+    background-color: forestgreen;
+    color: white;
+    text-decoration: none;
 }
 
 .sil {
-    padding: 10px;
+    padding: 8px;
+    margin: 5px;
     font-size: 12px;
     border-radius: 3px;
     background-color: red;
@@ -45,11 +48,47 @@
     text-decoration: none;
 }
 
-.geriAl{
-    padding: 10px;
+.geriAl {
+    padding: 8px;
+    margin: 5px;
     font-size: 12px;
     border-radius: 3px;
     background-color: #34495E;
     color: white;
     text-decoration: none;
 }
+
+.kategori {
+    padding: 8px;
+    margin: 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    background-color: #ff5700;
+    color: white;
+    text-decoration: none;
+}
+
+
+.esertablo {
+    width: 1250px;
+    font-size:12px;
+}
+
+    .esertablo tr {
+    }
+
+        .esertablo tr th {
+            background-color: #ECF0F1;
+            padding: 10px;
+            text-align: left;
+            border: 1px solid silver;
+        }
+
+        .esertablo tr td {
+            border: 1px solid silver;
+            padding: 10px;
+        }
+
+    .esertablo .alternate td {
+        background-color: #d8d8d8;
+    }

@@ -1,0 +1,124 @@
+﻿*, h1, h2, h3, h4, h5, h6, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Calibri;
+}
+
+}
+
+.gecici2 {
+    width: 300px;
+    background-color: #ffd800;
+    float: right;
+}
+
+.anaTasiyici {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.arkaPlan {
+    background-image: url('../resimler/banner.jpg');
+}
+
+.icerik {
+    width: 1000px;
+    float:left;
+}
+
+.kategoriler {
+    width: 125px;
+    border-radius: 5px;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 20px 0;
+    background-color: #A8C6CE;
+}
+
+    .kategoriler a {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+    }
+
+        .kategoriler a:hover {
+            color: white;
+        }
+
+.eserler {
+    background-color: red;
+    float: left;
+    margin: 20px 10px;
+}
+
+    .eserler a {
+        text-decoration: none;
+    }
+
+.linkler {
+    font-size: 20px;
+    font-family: MuseoModerno;
+}
+
+    .linkler a {
+        text-decoration: none;
+        padding: 10px;
+        color: black;
+    }
+
+        .linkler a:hover {
+            color: #ffffff;
+        }
+
+.uyePanel {
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+
+    .uyePanel a {
+        text-decoration: none;
+        color: black;
+    }
+
+        .uyePanel a:hover {
+            color: #ffffff;
+        }
+
+.tablo {
+    width: 1000px;
+    font-size: 12px;
+    padding-left: 20px;
+    margin-top:5px;
+}
+
+    .tablo tr {
+    }
+
+        .tablo tr th {
+            background-color: #ECF0F1;
+            padding: 10px;
+            text-align: left;
+            border: 1px solid silver;
+        }
+
+        .tablo tr td {
+            border: 1px solid silver;
+            padding:0 10px;
+        }
+
+.reklam{
+width:160px;
+padding-top:40px;
+float:right;
+}
+
+.eserDetay {
+    width: 800px;
+    font-size: 12px;
+    padding-left: 20px;
+}
+
