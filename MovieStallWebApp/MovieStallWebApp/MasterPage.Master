@@ -18,8 +18,9 @@
             <div style="float: left;">
                 <img src="resimler/logo.png" height="120" />
                 <div class="uyePanel">
-                    <a href="#" style="padding-left: 5px;">ÜYE OL</a>
-                    <a href="#" style="padding-left: 10px;">ÜYE GİRİŞİ</a>
+                    <a href="uyeOl.aspx" style="padding-left: 5px;">ÜYE OL</a>
+                    <a href="#" style="padding-left: 10px;">ÜYE GİRİŞİ</a>  
+                    <a href="#" style="padding-left: 10px;">ÜYELİK İŞLEMLERİ</a>
                 </div>
             </div>
             <div class="linkler">

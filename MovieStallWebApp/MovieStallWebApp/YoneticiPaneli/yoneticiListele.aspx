@@ -20,7 +20,6 @@
                         <th>Mail</th>
                         <th>Şifre</th>
                         <th>Durum</th>
-                        <th>Silinmiş</th>
                         <th style="width: 350px;">Seçenekler</th>
                     </tr>
                     <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
@@ -34,8 +33,7 @@
                     <td><%# Eval("KullaniciAdi") %></td>
                     <td><%# Eval("Mail") %></td>
                     <td><%# Eval("Sifre") %></td>
-                    <td><%# Eval("Durum") %></td>
-                    <td><%# Eval("Silinmis") %></td>
+                    <td><%# Eval("aktiflikGostergesi") %></td>
                     <td>
                         <a href='yoneticiDuzenle.aspx?YntID=<%# Eval("YntID") %>' class="geriAl">Yönetici Düzenle</a>
                         <asp:LinkButton ID="lb_sil" runat="server" CssClass="sil" CommandArgument='<%# Eval("YntID")%>' CommandName="sil">Yönetici Sil</asp:LinkButton>
@@ -51,8 +49,7 @@
                     <td><%# Eval("KullaniciAdi") %></td>
                     <td><%# Eval("Mail") %></td>
                     <td><%# Eval("Sifre") %></td>
-                    <td><%# Eval("Durum") %></td>
-                    <td><%# Eval("Silinmis") %></td>
+                    <td><%# Eval("aktiflikGostergesi") %></td>
                     <td>
                         <a href='yoneticiDuzenle.aspx?YntID=<%# Eval("YntID") %>' class="geriAl">Yönetici Düzenle</a>
                         <asp:LinkButton ID="lb_sil" runat="server" CssClass="sil" CommandArgument='<%# Eval("YntID")%>' CommandName="sil">Yönetici Sil</asp:LinkButton>

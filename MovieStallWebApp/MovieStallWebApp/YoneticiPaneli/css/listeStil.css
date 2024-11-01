@@ -6,7 +6,7 @@
 
 .tablo {
     width: 1000px;
-    font-size:12px;
+    font-size: 12px;
 }
 
     .tablo tr {
@@ -24,13 +24,21 @@
             padding: 10px;
         }
 
+            .tablo tr td img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
     .tablo .alternate td {
         background-color: #d8d8d8;
     }
 
+  
+
 .duzenle {
     padding: 8px;
-    margin:5px;
+    margin: 5px;
     font-size: 12px;
     border-radius: 3px;
     background-color: forestgreen;
@@ -71,7 +79,7 @@
 
 .esertablo {
     width: 1250px;
-    font-size:12px;
+    font-size: 12px;
 }
 
     .esertablo tr {
@@ -89,6 +97,15 @@
             padding: 10px;
         }
 
+            .esertablo tr td img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
     .esertablo .alternate td {
         background-color: #d8d8d8;
     }
+.gizle {
+    -webkit-text-security: disc;
+}

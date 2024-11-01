@@ -40,10 +40,12 @@
                         <asp:TextBox ID="tb_dogumYeri" runat="server" CssClass="metinkutu"></asp:TextBox><br />
                     </div>
                 </div>
+
                 <div style="float: left; width: 380px; padding: 5px 0px;">
                     <label>Mevcut Görsel</label><br />
                     <asp:Image ID="img_resim" runat="server" Style="height: 290px; max-width: 370px; border: 2px solid silver;" />
                 </div>
+
                 <div style="clear: both;"></div>
             </div>
             <div class="satir">

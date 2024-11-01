@@ -41,8 +41,7 @@
                 <a href="eserEkle.aspx">Eser Ekle</a>
                 <a href="eserListele.aspx">Eser Listele</a>
                 <hr />
-                <a href="yoneticiDefault.aspx">Üyeler</a>
-                <a href="yoneticiDefault.aspx">Yorumlar</a>
+                <a href="uyeListele.aspx">Üye İşlemleri</a>
                 <hr />
                 <a href="yoneticiEkle.aspx">Yönetici Ekle</a>
                 <a href="yoneticiListele.aspx">Yönetici Listele</a>

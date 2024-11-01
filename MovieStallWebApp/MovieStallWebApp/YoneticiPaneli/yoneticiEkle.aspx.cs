@@ -33,7 +33,6 @@ namespace MovieStallWebApp.YoneticiPaneli
                 Y.Mail = tb_mail.Text;
                 Y.Sifre = tb_sifre.Text;
                 Y.Durum = cb_durum.Checked;
-                Y.Silinmis = false;
                
                 if (vrktmn.yoneticiEkle(Y))
                 {

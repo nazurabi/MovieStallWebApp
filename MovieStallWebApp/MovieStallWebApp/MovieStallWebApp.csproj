@@ -72,9 +72,11 @@
     <Content Include="eserDetay.aspx" />
     <Content Include="reklamlar\160x600.gif" />
     <Content Include="resimler\banner.jpg" />
+    <Content Include="resimler\logo arka planlı.jpg" />
     <Content Include="resimler\logo.png" />
     <Content Include="resimler\none.gif" />
     <Content Include="resimler\filmstrip and camera.gif" />
+    <Content Include="uyeOl.aspx" />
     <Content Include="Web.config" />
     <Content Include="YoneticiPaneli\ckeditor\adapters\jquery.js" />
     <Content Include="YoneticiPaneli\ckeditor\build-config.js" />
@@ -400,6 +402,9 @@
     <Content Include="YoneticiPaneli\oyuncuEkle.aspx" />
     <Content Include="YoneticiPaneli\oyuncuListele.aspx" />
     <Content Include="YoneticiPaneli\oyuncununFilmleri.aspx" />
+    <Content Include="YoneticiPaneli\uyeDuzenle.aspx" />
+    <Content Include="YoneticiPaneli\uyeListele.aspx" />
+    <Content Include="YoneticiPaneli\yoneticiDuzenle.aspx" />
     <Content Include="YoneticiPaneli\yoneticiEkle.aspx" />
     <Content Include="YoneticiPaneli\yoneticiListele.aspx" />
     <Content Include="YoneticiPaneli\yonetmenDuzenle.aspx" />
@@ -430,6 +435,13 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uyeOl.aspx.cs">
+      <DependentUpon>uyeOl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uyeOl.aspx.designer.cs">
+      <DependentUpon>uyeOl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="YoneticiPaneli\eserDuzenle.aspx.cs">
       <DependentUpon>eserDuzenle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -514,12 +526,33 @@
     <Compile Include="YoneticiPaneli\oyuncununFilmleri.aspx.designer.cs">
       <DependentUpon>oyuncununFilmleri.aspx</DependentUpon>
     </Compile>
+    <Compile Include="YoneticiPaneli\uyeDuzenle.aspx.cs">
+      <DependentUpon>uyeDuzenle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\uyeDuzenle.aspx.designer.cs">
+      <DependentUpon>uyeDuzenle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\uyeListele.aspx.cs">
+      <DependentUpon>uyeListele.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\uyeListele.aspx.designer.cs">
+      <DependentUpon>uyeListele.aspx</DependentUpon>
+    </Compile>
     <Compile Include="YoneticiPaneli\yoneticiDefault.aspx.cs">
       <DependentUpon>yoneticiDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="YoneticiPaneli\yoneticiDefault.aspx.designer.cs">
       <DependentUpon>yoneticiDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="YoneticiPaneli\yoneticiDuzenle.aspx.cs">
+      <DependentUpon>yoneticiDuzenle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="YoneticiPaneli\yoneticiDuzenle.aspx.designer.cs">
+      <DependentUpon>yoneticiDuzenle.aspx</DependentUpon>
     </Compile>
     <Compile Include="YoneticiPaneli\yoneticiEkle.aspx.cs">
       <DependentUpon>yoneticiEkle.aspx</DependentUpon>
@@ -609,6 +642,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="resimler\Avatarlar\" />
     <Folder Include="resimler\EserResimleri\" />
     <Folder Include="resimler\OyuncuResimleri\" />
     <Folder Include="resimler\YonetmenResimleri\" />

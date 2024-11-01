@@ -30,7 +30,7 @@
                 <tr>
                     <td>
                         <a href='eserDetay.aspx?EserBilgisiID=<%# Eval("EserBilgisiID") %>'>
-                            <img src='../resimler/EserResimleri/<%# Eval("KapakResmi") %>' height="100" style="padding-left: 10px;" />
+                            <img src='../resimler/EserResimleri/<%# Eval("KapakResmi") %>' height="100" />
                         </a>
                     </td>
                     <td><%# Eval("TurIsmi") %></td>

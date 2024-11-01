@@ -20,15 +20,14 @@ KullaniciAdi nvarchar(30),
 Mail nvarchar(50),
 Sifre nvarchar(20),
 Durum bit,
-Silinmis bit,
 CONSTRAINT pk_yoneticiler PRIMARY KEY (YntID),
 CONSTRAINT fk_yoneticiturleri FOREIGN KEY (YntTurID) REFERENCES YoneticiTurleri(ID)
 )
 GO
-INSERT INTO Yoneticiler (YntTurID, Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum, Silinmis)
-VALUES (1,'Nasuh', 'BERBER', 'nazurabi', 'nasuhberber@nazurabi.com', '1234', 1,0)
-INSERT INTO Yoneticiler (YntTurID, Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum, Silinmis)
-VALUES (2,'Murtaza', 'ÞUAYÝPOÐLU', 'muþuo', 'muþuo@gmail.com', 'Muþuo2626*', 1,0)
+INSERT INTO Yoneticiler (YntTurID, Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum)
+VALUES (1,'Nasuh', 'BERBER', 'nazurabi', 'nasuhberber@nazurabi.com', '1234', 1)
+INSERT INTO Yoneticiler (YntTurID, Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum)
+VALUES (2,'Murtaza', 'ÞUAYÝPOÐLU', 'muþuo', 'muþuo@gmail.com', 'Muþuo2626*', 1)
 GO
 CREATE TABLE Turler(
 TurID int IDENTITY(1,1),

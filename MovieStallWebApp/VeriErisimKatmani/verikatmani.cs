@@ -32,7 +32,7 @@ namespace VeriErisimKatmani
                 int sayi = Convert.ToInt32(cmd.ExecuteScalar()); // Olup olmamasını kontrol etme nedenimiz SQL Injectiondan kaçınmak amacıyla aslında çünkü Injection yese bile if kontrolünü aşıp veriyi bulup içinden detayları alamaz, geriye 1 döndürse bile bu sadece bir sayıdan ibaret olur çünkü count varsa işleme devam et deyip if bloğu kullandık yani arka arkaya birkaç kontrol yaptırdık bu nedenle SQL Injection yemesi bu tarz bir düzen için zor olmaktadır.
                 if (sayi == 1) // Eğer counttan dönen değer 1 ise mail ve şifrenin olduğunu anlayıp işleme devam eder ve gerekli bilgileri veritabanından çeker.
                 {
-                    cmd.CommandText = "SELECT Y.YntID, Y.YntTurID,YT.Isim,Y.Isim,Y.Soyisim,Y.KullaniciAdi,Y.Mail,Y.Sifre,Y.Durum,Y.Silinmis FROM Yoneticiler AS Y JOIN YoneticiTurleri AS YT ON Y.YntTurID=YT.ID WHERE Y.Mail=@mail AND Y.Sifre=@sifre";
+                    cmd.CommandText = "SELECT Y.YntID, Y.YntTurID,YT.Isim,Y.Isim,Y.Soyisim,Y.KullaniciAdi,Y.Mail,Y.Sifre,Y.Durum FROM Yoneticiler AS Y JOIN YoneticiTurleri AS YT ON Y.YntTurID=YT.ID WHERE Y.Mail=@mail AND Y.Sifre=@sifre";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@mail", mail);
                     cmd.Parameters.AddWithValue("@sifre", sifre);
@@ -49,7 +49,6 @@ namespace VeriErisimKatmani
                         Y.Mail = okuyucu.GetString(6);
                         Y.Sifre = okuyucu.GetString(7);
                         Y.Durum = okuyucu.GetBoolean(8);
-                        Y.Silinmis = okuyucu.GetBoolean(9);
                     }
                     return Y;
                 }
@@ -69,12 +68,11 @@ namespace VeriErisimKatmani
             }
         }
 
-
         public bool yoneticiEkle(yonetici Y)
         {
             try
             {
-                cmd.CommandText = " INSERT INTO Yoneticiler(YntTurID, Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum, Silinmis) VALUES(@yntTur, @isim, @soyisim, @kullaniciAdi, @mail, @sifre, @durum, @silinmis)";
+                cmd.CommandText = " INSERT INTO Yoneticiler(YntTurID, Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum) VALUES(@yntTur, @isim, @soyisim, @kullaniciAdi, @mail, @sifre, @durum)";
 
                 cmd.Parameters.Clear();
                
@@ -85,7 +83,6 @@ namespace VeriErisimKatmani
                 cmd.Parameters.AddWithValue("@mail", Y.Mail);
                 cmd.Parameters.AddWithValue("@sifre", Y.Sifre);
                 cmd.Parameters.AddWithValue("@durum", Y.Durum);
-                cmd.Parameters.AddWithValue("@silinmis", Y.Silinmis);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 return true;
@@ -107,7 +104,7 @@ namespace VeriErisimKatmani
             try
             {
 
-                cmd.CommandText = "SELECT YntID ,YntTurID, YT.Isim, Y.Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum, Silinmis  FROM Yoneticiler AS Y JOIN YoneticiTurleri AS YT ON Y.YntTurID= YT.ID";
+                cmd.CommandText = "SELECT YntID ,YntTurID, YT.Isim, Y.Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum  FROM Yoneticiler AS Y JOIN YoneticiTurleri AS YT ON Y.YntTurID= YT.ID";
                 cmd.Parameters.Clear();
                 con.Open();
                 SqlDataReader okuyucu = cmd.ExecuteReader();
@@ -123,7 +120,14 @@ namespace VeriErisimKatmani
                     Y.Mail = okuyucu.GetString(6);
                     Y.Sifre = okuyucu.GetString(7);
                     Y.Durum = okuyucu.GetBoolean(8);
-                    Y.Silinmis = okuyucu.GetBoolean(9);
+                    if (Y.Durum)
+                    {
+                        Y.aktiflikGostergesi = "Aktif";
+                    }
+                    else
+                    {
+                        Y.aktiflikGostergesi = "Aktif Değil";
+                    }
 
                     yoneticiler.Add(Y);
                 }
@@ -161,7 +165,7 @@ namespace VeriErisimKatmani
             try
             {
 
-                cmd.CommandText = "SELECT YntTurID, YT.Isim, Y.Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum, Silinmis  FROM Yoneticiler AS Y JOIN YoneticiTurleri AS YT ON Y.YntTurID= YT.ID WHERE YntTurID=@yntTurID";
+                cmd.CommandText = "SELECT Y.YntTurID, Y.YntID, YT.Isim, Y.Isim, Y.Soyisim, Y.KullaniciAdi, Y.Mail, Y.Sifre, Y.Durum  FROM Yoneticiler AS Y JOIN YoneticiTurleri AS YT ON Y.YntTurID= YT.ID WHERE Y.YntID=@yntTurID";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@yntTurID", id);
                 con.Open();
@@ -170,14 +174,14 @@ namespace VeriErisimKatmani
                 while (okuyucu.Read())
                 {
                     Y.YntTurID = okuyucu.GetInt32(0);
-                    Y.YntTur = okuyucu.GetString(1);
-                    Y.Isim = okuyucu.GetString(2);
-                    Y.Soyisim = okuyucu.GetString(3);
-                    Y.KullaniciAdi = okuyucu.GetString(4);
-                    Y.Mail = okuyucu.GetString(5);
-                    Y.Sifre = okuyucu.GetString(6);
-                    Y.Durum = okuyucu.GetBoolean(7);
-                    Y.Silinmis = okuyucu.GetBoolean(8);
+                    Y.YntID = okuyucu.GetInt32(1);
+                    Y.YntTur = okuyucu.GetString(2);
+                    Y.Isim = okuyucu.GetString(3);
+                    Y.Soyisim = okuyucu.GetString(4);
+                    Y.KullaniciAdi = okuyucu.GetString(5);
+                    Y.Mail = okuyucu.GetString(6);
+                    Y.Sifre = okuyucu.GetString(7);
+                    Y.Durum = okuyucu.GetBoolean(8);
                 }
                 return Y;
             }
@@ -196,15 +200,17 @@ namespace VeriErisimKatmani
         {
             try
             {
-                cmd.CommandText = "UPDATE Yoneticiler SET Isim=@isim, Soyisim=@soyisim, KullaniciAdi=@kullaniciAdi, Mail=@mail, Sifre=@sifre, Durum=@durum, Silinmis=@silinmis WHERE YntID=@id";
+                cmd.CommandText = "UPDATE Yoneticiler SET YntTurID=@yntTurID, Isim=@isim, Soyisim=@soyisim, KullaniciAdi=@kullaniciAdi, Mail=@mail, Sifre=@sifre, Durum=@durum  WHERE YntID=@id";
                 cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@yntTurID", Y.YntTurID);
                 cmd.Parameters.AddWithValue("@isim", Y.Isim);
                 cmd.Parameters.AddWithValue("@soyisim", Y.Soyisim);
                 cmd.Parameters.AddWithValue("@kullaniciAdi", Y.KullaniciAdi);
                 cmd.Parameters.AddWithValue("@mail", Y.Mail);
                 cmd.Parameters.AddWithValue("@sifre", Y.Sifre);
                 cmd.Parameters.AddWithValue("@durum", Y.Durum);
-                cmd.Parameters.AddWithValue("@silinmis", Y.Silinmis);
+                cmd.Parameters.AddWithValue("@id", Y.YntID);
+
                 con.Open();
                 cmd.ExecuteNonQuery();
                 return true;
@@ -221,31 +227,34 @@ namespace VeriErisimKatmani
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public List<yonetici> yoneticiTuruListele()
+        {
+            List<yonetici> yoneticiTuru = new List<yonetici>();
+            try
+            {
+                cmd.CommandText = "SELECT ID,Isim FROM YoneticiTurleri";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader okuyucu = cmd.ExecuteReader();
+                while (okuyucu.Read())
+                {
+                    yonetici yoneticiTur = new yonetici();
+                    yoneticiTur.YntTurID = okuyucu.GetInt32(0);
+                    yoneticiTur.YntTur = okuyucu.GetString(1);
+                    yoneticiTuru.Add(yoneticiTur);
+                }
+                return yoneticiTuru;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
         #endregion
 
@@ -1507,6 +1516,155 @@ namespace VeriErisimKatmani
                 con.Close();
             }
         }
+        #endregion
+
+        #region Kullanıcı Metodları
+
+        public bool uyeEkle(uyeler U)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Uyeler(Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum, Avatar) VALUES(@isim, @soyIsim, @kullaniciAdi, @mail, @sifre, @durum, @avatar)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@isim", U.Isim);
+                cmd.Parameters.AddWithValue("@soyIsim", U.Soyisim);
+                cmd.Parameters.AddWithValue("@kullaniciAdi", U.KullaniciAdi);
+                cmd.Parameters.AddWithValue("@mail", U.Mail);
+                cmd.Parameters.AddWithValue("@sifre",U.Sifre);
+                cmd.Parameters.AddWithValue("@durum", U.Durum);
+                cmd.Parameters.AddWithValue("@avatar", U.Avatar);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public List<uyeler> uyeListele()
+        {
+            List<uyeler> uye = new List<uyeler>();
+            try
+            {
+                cmd.CommandText = "SELECT UyeID, Isim, Soyisim, KullaniciAdi, Mail, Sifre, Avatar, Durum FROM Uyeler";
+                cmd.Parameters.Clear();
+                con.Open();
+                SqlDataReader okuyucu = cmd.ExecuteReader();
+                while (okuyucu.Read())
+                {
+                    uyeler U = new uyeler();
+                    U.UyeID = okuyucu.GetInt32(0);
+                    U.Isim = okuyucu.GetString(1);
+                    U.Soyisim = okuyucu.GetString(2);
+                    U.KullaniciAdi = okuyucu.GetString(3);
+                    U.Mail = okuyucu.GetString(4);
+                    U.Sifre = okuyucu.GetString(5);
+                    U.Avatar = okuyucu.GetString(6);
+                    U.Durum = okuyucu.GetBoolean(7);
+             
+                    uye.Add(U);
+                }
+                return uye;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public void uyeSil(int id)
+        {
+            try
+            {
+                cmd.CommandText = "DELETE FROM Uyeler WHERE UyeID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public uyeler uyeGetir(int id)
+        {
+            try
+            {
+
+                cmd.CommandText = "SELECT UyeID, Isim, Soyisim, KullaniciAdi, Mail, Sifre, Avatar, Durum FROM Uyeler WHERE UyeID=@uyeID";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@uyeID", id);
+                con.Open();
+                SqlDataReader okuyucu = cmd.ExecuteReader();
+                uyeler U = new uyeler();
+                while (okuyucu.Read())
+                {
+                    U.UyeID = okuyucu.GetInt32(0);
+                    U.Isim = okuyucu.GetString(1);
+                    U.Soyisim= okuyucu.GetString(2);
+                    U.KullaniciAdi= okuyucu.GetString(3);
+                    U.Mail = okuyucu.GetString(4);
+                    U.Sifre= okuyucu.GetString(5);
+                    U.Avatar= okuyucu.GetString(6);
+                    U.Durum= okuyucu.GetBoolean(7);
+                }
+                return U;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool uyeGuncelle(uyeler U)
+        {
+            try
+            {
+                cmd.CommandText = "UPDATE Uyeler SET Isim=@isim, Soyisim=@soyIsim, KullaniciAdi=@kullaniciAdi, Mail=@mail, Sifre=@sifre, Durum=@durum, Avatar=@avatar WHERE UyeID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@isim", U.Isim);
+                cmd.Parameters.AddWithValue("@soyIsim", U.Soyisim);
+                cmd.Parameters.AddWithValue("@kullaniciAdi", U.KullaniciAdi);
+                cmd.Parameters.AddWithValue("@mail", U.Mail);
+                cmd.Parameters.AddWithValue("@sifre", U.Sifre);
+                cmd.Parameters.AddWithValue("@durum", U.Durum);
+                cmd.Parameters.AddWithValue("@avatar", U.Avatar);
+                cmd.Parameters.AddWithValue("@id",U.UyeID);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         #endregion
     }
 }

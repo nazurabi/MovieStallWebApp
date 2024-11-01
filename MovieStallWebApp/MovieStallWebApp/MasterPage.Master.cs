@@ -23,28 +23,35 @@ namespace MovieStallWebApp
             rpt_kategoriler.DataSource = vrktmn.tureAitKategorileriListele(1);
             rpt_kategoriler.DataBind();
             vrktmn.sonSecilenGuncelle(1);
+            //Response.Redirect("Default.aspx");
         }
 
         protected void lbtn_kisafilm_Click(object sender, EventArgs e)
         {
+       
             rpt_kategoriler.DataSource = vrktmn.tureAitKategorileriListele(2);
             rpt_kategoriler.DataBind();
             vrktmn.sonSecilenGuncelle(2);
+            //Response.Redirect("Default.aspx");
         }
 
         protected void lbtn_dizi_Click(object sender, EventArgs e)
         {
+          
             rpt_kategoriler.DataSource = vrktmn.tureAitKategorileriListele(3);
             rpt_kategoriler.DataBind();
             vrktmn.sonSecilenGuncelle(3);
+            //Response.Redirect("Default.aspx");
         }
 
         protected void lbtn_belgesel_Click(object sender, EventArgs e)
         {
+      
             rpt_kategoriler.DataSource = vrktmn.tureAitKategorileriListele(4);
             rpt_kategoriler.DataBind();
             vrktmn.sonSecilenGuncelle(4);
+            //Response.Redirect("Default.aspx");
         }
-    
+
     }
 }

@@ -28,6 +28,7 @@ namespace MovieStallWebApp.YoneticiPaneli
                     {
                         ddl_tur.DataSource = vrktmn.turListele();
                         ddl_tur.DataBind();
+                        ddl_tur.SelectedValue = Convert.ToString(E.TurIDFK);
                         tb_eserAdi.Text = E.Isim;
                         tb_yil.Text = E.Yil;
                         tb_imdb.Text = E.ImdbPuani;
