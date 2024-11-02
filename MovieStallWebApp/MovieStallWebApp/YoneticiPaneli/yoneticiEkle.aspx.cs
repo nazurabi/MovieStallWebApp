@@ -16,14 +16,28 @@ namespace MovieStallWebApp.YoneticiPaneli
         {
             if (!IsPostBack)
             {
-                ddl_yoneticiTuru.DataSource = vrktmn.yoneticiListele();
-                ddl_yoneticiTuru.DataBind();
+                if (Session["Yonetici"] != null)
+                {
+                    yonetici Y = (yonetici)Session["Yonetici"];
+                    if (Y.YntTurID == 1)
+                    {
+                        ddl_yoneticiTuru.DataSource = vrktmn.yoneticiListele();
+                        ddl_yoneticiTuru.DataBind();
+                    }
+                    else
+                    {
+                        lbtn_yoneticiEkle.Visible = false;
+                        lbl_bilgi.Visible = true;
+                        lbl_bilgi.Text = "Admin Yetkisinde Değilsiniz";
+                        lbl_bilgi.BackColor = System.Drawing.Color.Red;
+                    }
+                }
             }
         }
 
         protected void lbtn_yoneticiEkle_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(tb_isim.Text))
+            if (tb_isim.Text != "" && tb_soyisim.Text != "" && tb_kullaniciAdi.Text != "" && tb_mail.Text != "" && tb_sifre.Text != "")
             {
                 yonetici Y = new yonetici();
                 Y.YntTurID = Convert.ToInt32(ddl_yoneticiTuru.SelectedItem.Value);
@@ -33,7 +47,7 @@ namespace MovieStallWebApp.YoneticiPaneli
                 Y.Mail = tb_mail.Text;
                 Y.Sifre = tb_sifre.Text;
                 Y.Durum = cb_durum.Checked;
-               
+
                 if (vrktmn.yoneticiEkle(Y))
                 {
                     lbl_bilgi.Visible = true;
@@ -50,7 +64,7 @@ namespace MovieStallWebApp.YoneticiPaneli
             else
             {
                 lbl_bilgi.Visible = true;
-                lbl_bilgi.Text = "Yönetici Adı Boş Bırakılamaz";
+                lbl_bilgi.Text = "Boş Alanlar Mevcut";
                 lbl_bilgi.BackColor = System.Drawing.Color.Red;
             }
         }

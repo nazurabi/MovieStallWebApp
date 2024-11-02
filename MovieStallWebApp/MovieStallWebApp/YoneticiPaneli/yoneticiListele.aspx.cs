@@ -13,8 +13,23 @@ namespace MovieStallWebApp.YoneticiPaneli
         verikatmani vrktmn = new verikatmani();
         protected void Page_Load(object sender, EventArgs e)
         {
-            lv_yoneticiler.DataSource = vrktmn.yoneticiListele();
-            lv_yoneticiler.DataBind();
+            if (Session["Yonetici"] != null)
+            {
+                yonetici Y = (yonetici)Session["Yonetici"];
+                if (Y.YntTurID == 1)
+                {
+                    lv_yoneticiler.DataSource = vrktmn.yoneticiListele();
+                    lv_yoneticiler.DataBind();
+                }
+                else
+                {
+                    lbl_bilgi.Visible = true;
+                }
+            }
+            else
+            {
+                Response.Redirect("giris.aspx");
+            }
         }
 
         protected void lv_yoneticiler_ItemCommand(object sender, ListViewCommandEventArgs e)

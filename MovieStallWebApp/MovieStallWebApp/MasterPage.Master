@@ -15,12 +15,18 @@
 <body>
     <form id="form1" runat="server">
         <div class="anaTasiyici arkaPlan">
+            <div class="kullaniciBilgiPaneliBasligi" style="float: right;">
+                <asp:Label ID="lbl_kullanicibilgi" runat="server" CssClass="kullaniciBilgiPaneliYetki">Kullanıcı Adı(Yetki)</asp:Label>
+                <asp:LinkButton ID="lbtn_cikis" runat="server" CssClass="kullaniciBilgiPaneliCikis" OnClick="lbtn_cikis_Click">Güvenli Çıkış</asp:LinkButton>
+            </div>
             <div style="float: left;">
-                <img src="resimler/logo.png" height="120" />
+                <img src="resimler/logo.png" height="100" />
                 <div class="uyePanel">
                     <a href="uyeOl.aspx" style="padding-left: 5px;">ÜYE OL</a>
-                    <a href="#" style="padding-left: 10px;">ÜYE GİRİŞİ</a>
-                    <a href="#" style="padding-left: 10px;">ÜYELİK İŞLEMLERİ</a>
+                    <a href="uyeGirisi.aspx" style="padding-left: 10px;">ÜYE GİRİŞİ</a>
+                   <%-- <div style="float-left;">
+                        <a href="#" style="padding-left: 10px;">ÜYELİK İŞLEMLERİ</a> PROBLEM VAR ÇÖZ !!!
+                    </div>--%>
                 </div>
             </div>
             <div class="linkler">
@@ -35,7 +41,7 @@
             <div style="clear: both;"></div>
         </div>
 
-        <div class="anaTasiyici" style="background-color: yellow; height: 200px;">
+        <div class="anaTasiyici">
 
             <div class="icerik">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

@@ -19,7 +19,7 @@ namespace MovieStallWebApp
 
         protected void lbtn_uyeOl_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(tb_kullaniciAdi.Text))
+            if (tb_isim.Text!="" && tb_soyisim.Text!="" && tb_kullaniciAdi.Text != "" && tb_mail.Text != "" && tb_sifre.Text != "")
             {
                 uyeler U = new uyeler();
                 U.Isim = tb_isim.Text;
@@ -58,7 +58,7 @@ namespace MovieStallWebApp
             else
             {
                 lbl_bilgi.Visible = true;
-                lbl_bilgi.Text = "Kullanıcı Adı Boş Bırakılamaz";
+                lbl_bilgi.Text = "Boş Alanlar Mevcut";
                 lbl_bilgi.BackColor = System.Drawing.Color.Red;
             }
         }

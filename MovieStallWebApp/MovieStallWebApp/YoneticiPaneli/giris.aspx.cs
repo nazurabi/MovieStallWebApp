@@ -4,13 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using VeriErisimKatmani; //dll i buraya ekleriz ve normalde buraya tanımlarız lakin Alp hoca bu şekilde yapsanız iyi olur dedi-->
-
+using VeriErisimKatmani; 
 namespace MovieStallWebApp.YoneticiPaneli
 {
     public partial class giris : System.Web.UI.Page
     {
-        // --> buraya VeriErisimKatmaninin sınıfını ekleriz
         verikatmani vrktmn = new verikatmani();
         protected void Page_Load(object sender, EventArgs e)
         {

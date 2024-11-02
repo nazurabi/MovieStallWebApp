@@ -30,7 +30,7 @@
                     <asp:Button ID="btn_giris" runat="server" Text="Yönetici Girişi" CssClass="girisButon" OnClick="btn_giris_Click" />
                 </div>
                 <div class="satir">
-                    <a href="#" class="unuttum">Şifremi Unuttum</a>
+                    <a href="https://mail.google.com/" class="unuttum">Şifremi Unuttum</a>
                 </div>
             </div>
             <div class="sag">

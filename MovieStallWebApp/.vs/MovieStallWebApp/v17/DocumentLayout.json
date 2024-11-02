@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9FB88D6A-7709-4835-9868-70904A01A2DB}|VeriErisimKatmani\\VeriErisimKatmani.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\verierisimkatmani\\verikatmani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FB88D6A-7709-4835-9868-70904A01A2DB}|VeriErisimKatmani\\VeriErisimKatmani.csproj|solutionrelative:verierisimkatmani\\verikatmani.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\yoneticipaneli\\giris.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\giris.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FB88D6A-7709-4835-9868-70904A01A2DB}|VeriErisimKatmani\\VeriErisimKatmani.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\verierisimkatmani\\uyeler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FB88D6A-7709-4835-9868-70904A01A2DB}|VeriErisimKatmani\\VeriErisimKatmani.csproj|solutionrelative:verierisimkatmani\\uyeler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\uyegirisi.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\uyegirisi.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\uyegirisi.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\uyegirisi.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\css\\sayfatasarimi.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\css\\sayfatasarimi.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\yoneticipaneli\\css\\girisstil.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\css\\girisstil.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|c:\\users\\aden hadika\\desktop\\moviestallwebapp\\moviestallwebapp\\moviestallwebapp\\yoneticipaneli\\css\\yoneticipnlsitili.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1761DB63-4F38-488E-91F2-A9A8D9E8BFC4}|MovieStallWebApp\\MovieStallWebApp.csproj|solutionrelative:moviestallwebapp\\yoneticipaneli\\css\\yoneticipnlsitili.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,8 +17,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 307,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 254,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -54,106 +30,22 @@
               "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\giris.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-01T23:52:35.176Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "sayfaTasarimi.css",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\css\\sayfaTasarimi.css",
-              "RelativeDocumentMoniker": "MovieStallWebApp\\css\\sayfaTasarimi.css",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\css\\sayfaTasarimi.css",
-              "RelativeToolTip": "MovieStallWebApp\\css\\sayfaTasarimi.css",
-              "ViewState": "AgIAABcBAAAAAAAAAAAswDMBAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-02T01:42:37.75Z",
+              "WhenOpened": "2024-11-02T11:27:02.127Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "verikatmani.cs",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\VeriErisimKatmani\\verikatmani.cs",
-              "RelativeDocumentMoniker": "VeriErisimKatmani\\verikatmani.cs",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\VeriErisimKatmani\\verikatmani.cs",
-              "RelativeToolTip": "VeriErisimKatmani\\verikatmani.cs",
-              "ViewState": "AgIAAPgFAAAAAAAAAAAUwA4GAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T03:03:56.975Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "girisStil.css",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\css\\girisStil.css",
-              "RelativeDocumentMoniker": "MovieStallWebApp\\YoneticiPaneli\\css\\girisStil.css",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\css\\girisStil.css",
-              "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\css\\girisStil.css",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-02T02:56:02.286Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "yoneticipnlsitili.css",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\css\\yoneticipnlsitili.css",
-              "RelativeDocumentMoniker": "MovieStallWebApp\\YoneticiPaneli\\css\\yoneticipnlsitili.css",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\YoneticiPaneli\\css\\yoneticipnlsitili.css",
-              "RelativeToolTip": "MovieStallWebApp\\YoneticiPaneli\\css\\yoneticipnlsitili.css",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAC0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-02T02:54:20.739Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "uyeGirisi.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\uyeGirisi.aspx.cs",
-              "RelativeDocumentMoniker": "MovieStallWebApp\\uyeGirisi.aspx.cs",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\uyeGirisi.aspx.cs",
-              "RelativeToolTip": "MovieStallWebApp\\uyeGirisi.aspx.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAwwBgAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T02:50:49.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "uyeGirisi.aspx",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\uyeGirisi.aspx",
-              "RelativeDocumentMoniker": "MovieStallWebApp\\uyeGirisi.aspx",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\uyeGirisi.aspx",
-              "RelativeToolTip": "MovieStallWebApp\\uyeGirisi.aspx",
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\Default.aspx",
+              "RelativeDocumentMoniker": "MovieStallWebApp\\Default.aspx",
+              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\MovieStallWebApp\\Default.aspx",
+              "RelativeToolTip": "MovieStallWebApp\\Default.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-02T02:46:30.752Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 149,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "uyeler.cs",
-              "DocumentMoniker": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\VeriErisimKatmani\\uyeler.cs",
-              "RelativeDocumentMoniker": "VeriErisimKatmani\\uyeler.cs",
-              "ToolTip": "C:\\Users\\Aden Hadika\\Desktop\\MovieStallWebApp\\MovieStallWebApp\\VeriErisimKatmani\\uyeler.cs",
-              "RelativeToolTip": "VeriErisimKatmani\\uyeler.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T03:06:08.973Z",
+              "WhenOpened": "2024-11-02T11:27:09.533Z",
+              "IsPinned": true,
               "EditorCaption": ""
             }
           ]

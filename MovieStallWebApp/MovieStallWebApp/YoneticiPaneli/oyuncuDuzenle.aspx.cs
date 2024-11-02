@@ -44,7 +44,7 @@ namespace MovieStallWebApp.YoneticiPaneli
 
         protected void lbtn_oyuncuDuzenle_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(tb_oyuncuAdi.Text))
+            if (tb_oyuncuAdi.Text != "" && tb_oyuncuSoyismi.Text != "" && tb_cinsiyet.Text != "" && tb_biyografi.Text != "" && tb_dogumTarihi.Text != "" && tb_dogumYeri.Text != "")
             {
 
                 int id = Convert.ToInt32(Request.QueryString["oyuncuID"]);
@@ -84,7 +84,7 @@ namespace MovieStallWebApp.YoneticiPaneli
             else
             {
                 lbl_bilgi.Visible = true;
-                lbl_bilgi.Text = "Oyuncu Adı Boş Bırakılamaz";
+                lbl_bilgi.Text = "Boş Alanlar Mevcut";
                 lbl_bilgi.BackColor = System.Drawing.Color.Red;
             }
         }

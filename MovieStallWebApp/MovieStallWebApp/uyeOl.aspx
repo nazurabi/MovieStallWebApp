@@ -9,7 +9,7 @@
         <div class="formBaslik">
             <h4>Üye Ol</h4>
         </div>
-        <div class="formIcerik">
+        <div class="formIcerikUyeOl">
             <div class="satir">
                 <label>İsim</label><br />
                 <asp:TextBox ID="tb_isim" runat="server" CssClass="metinkutu"></asp:TextBox><br />

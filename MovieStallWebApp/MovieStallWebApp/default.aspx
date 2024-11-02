@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
         <asp:Label ID="lbl_kategoriAdi" runat="server" Style="padding-left: 20px; font-weight: 600"></asp:Label>
-        <div class="kategoriler" style="background-color: blue; height: 250px; float: left;">
+        <div class="kategoriler" float: left;">
             <asp:Repeater ID="rpt_kategoriler" runat="server">
                 <ItemTemplate>
                     <table cellspacing="20">
@@ -19,7 +19,7 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-        <div style="background-color: aqua; height: 100px;">
+        <div>
             <asp:ListView ID="lv_kategorininFilmleri" runat="server">
                 <LayoutTemplate>
                     <table cellspacing="0" cellpadding="0" class="kategorilerTablo">

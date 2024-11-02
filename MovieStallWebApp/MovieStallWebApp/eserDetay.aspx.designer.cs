@@ -87,6 +87,15 @@ namespace MovieStallWebApp
         protected global::System.Web.UI.WebControls.Literal ltrl_konu;
 
         /// <summary>
+        /// lbl_girisKontrol control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_girisKontrol;
+
+        /// <summary>
         /// tb_yorum control.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace MovieStallWebApp
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_yorum;
+
+        /// <summary>
+        /// ddl_moviestallPuani control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect ddl_moviestallPuani;
 
         /// <summary>
         /// lbtn_yorumEkle control.

@@ -23,7 +23,7 @@ namespace MovieStallWebApp.YoneticiPaneli
 
         protected void lbtn_eserEkle_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(tb_eserAdi.Text))
+            if (tb_eserAdi.Text != "" && tb_yil.Text != "" && tb_imdb.Text != "" && tb_vizyonTarihi.Text != "" && tb_konu.Text != "")
             {
                 eser E = new eser();
                 E.TurIDFK = Convert.ToInt32(ddl_tur.SelectedItem.Value);
@@ -64,7 +64,7 @@ namespace MovieStallWebApp.YoneticiPaneli
             else
             {
                 lbl_bilgi.Visible = true;
-                lbl_bilgi.Text = "Eser Adı Boş Bırakılamaz";
+                lbl_bilgi.Text = "Boş Alanlar Mevcut";
                 lbl_bilgi.BackColor = System.Drawing.Color.Red;
             }
         }

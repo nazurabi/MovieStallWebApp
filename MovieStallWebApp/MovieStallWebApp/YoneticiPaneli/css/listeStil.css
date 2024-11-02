@@ -111,3 +111,11 @@
 .gizle {
     -webkit-text-security: disc;
 }
+
+.girisbilgipaneli {
+    background-color: #FF0000;
+    color: white;
+    padding: 10px;
+    width: 298px;
+    border-radius: 5px;
+}

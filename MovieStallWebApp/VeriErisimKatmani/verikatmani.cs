@@ -1532,7 +1532,7 @@ namespace VeriErisimKatmani
                 int sayi = Convert.ToInt32(cmd.ExecuteScalar()); 
                 if (sayi == 1) 
                 {
-                    cmd.CommandText = "SELECT UyeID, Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum, Avatar FROM Uyeler WHERE Y.Mail=@mail AND Y.Sifre=@sifre";
+                    cmd.CommandText = "SELECT UyeID, Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum, Avatar FROM Uyeler WHERE Mail=@mail AND Sifre=@sifre";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@mail", mail);
                     cmd.Parameters.AddWithValue("@sifre", sifre);
@@ -1541,14 +1541,13 @@ namespace VeriErisimKatmani
                     while (okuyucu.Read())
                     {
                         U.UyeID = okuyucu.GetInt32(0);
-                        U.Isim= okuyucu.GetInt32(1);
+                        U.Isim= okuyucu.GetString(1);
                         U.Soyisim= okuyucu.GetString(2);
                         U.KullaniciAdi = okuyucu.GetString(3);
                         U.Mail= okuyucu.GetString(4);
                         U.Sifre= okuyucu.GetString(5);
-                        U.Durum = okuyucu.GetString(6);
+                        U.Durum = okuyucu.GetBoolean(6);
                         U.Avatar= okuyucu.GetString(7);
-                  BURAYI HALLET 
                     }
                     return U;
                 }
@@ -1567,7 +1566,6 @@ namespace VeriErisimKatmani
                 con.Close();
             }
         }
-
 
         public bool uyeEkle(uyeler U)
         {
@@ -1702,6 +1700,33 @@ namespace VeriErisimKatmani
                 cmd.ExecuteNonQuery();
                 return true;
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool yorumEkle(yorumlar Y)
+        {
+            try
+            {
+                cmd.CommandText = "INSERT INTO Yorumlar(UyeIDFK, EserBilgisiIDFK, Yorum, EklemeTarihi, MovieStallPuani, Durum) VALUES(@uyeIDFK, @eserBilgisiIDFK, @yorum, @eklemeTarihi, @mvPuani, @durum)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@uyeIDFK",Y.UyeIDFK);
+                cmd.Parameters.AddWithValue("@eserBilgisiIDFK", Y.EserBilgisiIDFK);
+                cmd.Parameters.AddWithValue("@yorum",Y.Yorum);
+                cmd.Parameters.AddWithValue("@eklemeTarihi", Y.EklemeTarihi);
+                cmd.Parameters.AddWithValue("@mvPuani",Y.MovieStallPuani);
+                cmd.Parameters.AddWithValue("@durum", Y.Durum);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {

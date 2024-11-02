@@ -23,6 +23,7 @@
                 <asp:Label ID="lbl_kullanicibilgi" runat="server" CssClass="kullaniciBilgiPaneliYetki">Kullanıcı Adı(Yetki)</asp:Label>
                 <asp:LinkButton ID="lbtn_cikis" runat="server" CssClass="kullaniciBilgiPaneliCikis" OnClick="lbtn_cikis_Click">Güvenli Çıkış</asp:LinkButton>
             </div>
+
             <div style="clear: both;"></div>
         </div>
         <div>

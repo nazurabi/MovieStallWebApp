@@ -77,6 +77,7 @@ Konusu nvarchar(max),
 GoruntulemeSayisi bigint,
 KapakResmi nvarchar(max),
 YayinDurum bit,
+DuzenlenmeTarihi datetime,
 CONSTRAINT pk_eser PRIMARY KEY(EserBilgisiID),
 CONSTRAINT fk_tur FOREIGN KEY(TurIDFK) REFERENCES Turler(TurID)
 )
@@ -99,6 +100,7 @@ Biyografi nvarchar(max),
 DogumTarihi nvarchar(15),
 DogumYeri nvarchar(50),
 KapakResmi nvarchar(max),
+DuzenlenmeTarihi datetime,
 CONSTRAINT pk_oyuncular PRIMARY KEY(OyuncuID)
 )
 GO
@@ -120,6 +122,7 @@ Biyografi nvarchar(max),
 DogumTarihi nvarchar(15),
 DogumYeri nvarchar(50),
 KapakResmi nvarchar(max),
+DuzenlenmeTarihi datetime,
 CONSTRAINT pk_yonetmen PRIMARY KEY(YonetmenID)
 )
 GO
@@ -134,8 +137,6 @@ CONSTRAINT fk_eserbilgisiyf FOREIGN KEY(EserBilgisiIDFK) REFERENCES EserBilgisi(
 GO
 CREATE TABLE Uyeler(
 UyeID int IDENTITY(1,1),
-Izlediklerim int,--Üyenin izledikleri için
-Izlenecekler int,--Üyenin izlemeyi planladýklarý için
 Isim nvarchar(30),
 Soyisim nvarchar(30),
 KullaniciAdi nvarchar(30),
@@ -143,14 +144,11 @@ Mail nvarchar(50),
 Sifre nvarchar(20),
 Avatar nvarchar(50),
 Durum bit,
-Silinmis bit,
 CONSTRAINT pk_uye PRIMARY KEY (UyeID),
-CONSTRAINT fk_izlediklerim FOREIGN KEY(Izlediklerim) REFERENCES EserBilgisi(EserBilgisiID),
-CONSTRAINT fk_izlenecekler FOREIGN KEY(Izlenecekler) REFERENCES EserBilgisi(EserBilgisiID)
 )
 GO
-INSERT INTO Uyeler (Isim, Soyisim,KullaniciAdi,Mail,Sifre,Durum,Silinmis)
-VALUES ('Murtaza','MURTOÐLU','murmurt','murtazamurtoglu@gmail.com','1234',1,0)
+INSERT INTO Uyeler (Isim, Soyisim,KullaniciAdi,Mail,Sifre,Durum)
+VALUES ('Murtaza','MURTOÐLU','murmurt','murtazamurtoglu@gmail.com','1234',1)
 GO
 CREATE TABLE Yorumlar(
 YrmID int IDENTITY(1,1),
@@ -165,20 +163,6 @@ CONSTRAINT fk_uye FOREIGN KEY(UyeIDFK) REFERENCES Uyeler(UyeID),
 CONSTRAINT fk_eserbilgisiyrm FOREIGN KEY (EserBilgisiIDFK) REFERENCES EserBilgisi(EserBilgisiID)
 )
 GO
---CREATE TABLE Eserler(
---EserlerID int IDENTITY(1,1),
---EserBilgisiIDFK int not null,
---KategoriIDFK int not null,
---OyuncuIDFK int not null,
---YonetmenIDFK int not null,
---YorumIDFK int,
---CONSTRAINT pk_eserler PRIMARY KEY (EserlerID),
---CONSTRAINT fk_eserbilgisi FOREIGN KEY (EserBilgisiIDFK) REFERENCES EserBilgisi(EserBilgisiID),
---CONSTRAINT fk_kategoriler FOREIGN KEY (KategoriIDFK) REFERENCES Kategoriler(KategoriID),
---CONSTRAINT fk_oyuncu FOREIGN KEY (OyuncuIDFK) REFERENCES Oyuncular(OyuncuID),
---CONSTRAINT fk_yonetmen FOREIGN KEY (YonetmenIDFK) REFERENCES Yonetmenler(YonetmenID),
---CONSTRAINT fk_yorum FOREIGN KEY (YorumIDFK) REFERENCES Yorumlar(YrmID)
---)
 
 CREATE TABLE SecilenTur(
 STID int IDENTITY(1,1),

@@ -7,6 +7,8 @@
 
     <div class="sayfaBaslik">
         <h3>Yöneticiler</h3>
+        <br />
+        <asp:Label ID="lbl_bilgi" runat="server" Visible="false" CssClass="girisbilgipaneli" Text="Admin Yetkisinde Değilsiniz"></asp:Label>
     </div>
     <div>
         <asp:ListView ID="lv_yoneticiler" runat="server" OnItemCommand="lv_yoneticiler_ItemCommand">

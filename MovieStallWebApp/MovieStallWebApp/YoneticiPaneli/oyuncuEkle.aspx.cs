@@ -19,7 +19,7 @@ namespace MovieStallWebApp.YoneticiPaneli
 
         protected void lbtn_oyuncuEkle_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(tb_isim.Text))
+            if (tb_isim.Text != "" && tb_soyisim.Text != "" && tb_cinsiyet.Text != "" && tb_biyografi.Text != "" && tb_dogumtarihi.Text != "" && tb_dogumtarihi.Text != "")
             {
                 oyuncu O = new oyuncu();
                 O.OyuncuIsmi = tb_isim.Text;
@@ -58,7 +58,7 @@ namespace MovieStallWebApp.YoneticiPaneli
             else
             {
                 lbl_bilgi.Visible = true;
-                lbl_bilgi.Text = "Oyuncu Adı Boş Bırakılamaz";
+                lbl_bilgi.Text = "Boş Alanlar Mevcut";
                 lbl_bilgi.BackColor = System.Drawing.Color.Red;
             }
         }

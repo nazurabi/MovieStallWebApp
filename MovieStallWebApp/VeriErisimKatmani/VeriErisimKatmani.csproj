@@ -55,6 +55,7 @@
     <Compile Include="yonetici.cs" />
     <Compile Include="yonetmen.cs" />
     <Compile Include="yonetmeninfilmleri.cs" />
+    <Compile Include="yorumlar.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

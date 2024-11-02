@@ -55,7 +55,7 @@
             </div>
 
             <div class="satir">
-                <asp:LinkButton ID="lbtn_yoneticiEkle" runat="server" CssClass="islembuton" OnClick="lbtn_yoneticiEkle_Click">Yönetici Ekle</asp:LinkButton>
+                <asp:LinkButton Visible="true" ID="lbtn_yoneticiEkle" runat="server" CssClass="islembuton" OnClick="lbtn_yoneticiEkle_Click">Yönetici Ekle</asp:LinkButton>
             </div>
             <div></div>
             <div class="satir">

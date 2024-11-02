@@ -22,11 +22,11 @@ namespace MovieStallWebApp
             {
                 if (!string.IsNullOrEmpty(tb_sifre.Text))
                 {
-                    uyeler U = vrktmn.yoneticiGirisi(tb_mail.Text, tb_sifre.Text);
-                    if (Y != null)
+                    uyeler U = vrktmn.uyeGirisi(tb_mail.Text, tb_sifre.Text);
+                    if (U != null)
                     {
-                        Session["Yonetici"] = Y;
-                        Response.Redirect("yoneticiDefault.aspx");
+                        Session["UyeBilgi"] = U;
+                        Response.Redirect("Default.aspx");
                     }
                     else
                     {
