@@ -41,7 +41,7 @@
 
                     <div class="satir">
                         <label>Şifre</label><br />
-                        <asp:TextBox ID="tb_sifre" runat="server" CssClass="metinkutu"></asp:TextBox><br />
+                        <asp:TextBox ID="tb_sifre" runat="server" CssClass="metinkutu" TextMode="Password"></asp:TextBox><br />
                     </div>
 
                     <div class="satir">

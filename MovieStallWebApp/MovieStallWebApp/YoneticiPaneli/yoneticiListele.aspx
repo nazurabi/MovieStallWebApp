@@ -32,7 +32,7 @@
                     <td><%# Eval("Soyisim") %></td>
                     <td><%# Eval("KullaniciAdi") %></td>
                     <td><%# Eval("Mail") %></td>
-                    <td><%# Eval("Sifre") %></td>
+                    <td class="gizle"><%# Eval("Sifre") %></td>
                     <td><%# Eval("aktiflikGostergesi") %></td>
                     <td>
                         <a href='yoneticiDuzenle.aspx?YntID=<%# Eval("YntID") %>' class="geriAl">Yönetici Düzenle</a>
@@ -48,7 +48,7 @@
                     <td><%# Eval("Soyisim") %></td>
                     <td><%# Eval("KullaniciAdi") %></td>
                     <td><%# Eval("Mail") %></td>
-                    <td><%# Eval("Sifre") %></td>
+                    <td class="gizle"><%# Eval("Sifre") %></td>
                     <td><%# Eval("aktiflikGostergesi") %></td>
                     <td>
                         <a href='yoneticiDuzenle.aspx?YntID=<%# Eval("YntID") %>' class="geriAl">Yönetici Düzenle</a>

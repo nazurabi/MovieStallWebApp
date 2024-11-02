@@ -76,6 +76,7 @@
     <Content Include="resimler\logo.png" />
     <Content Include="resimler\none.gif" />
     <Content Include="resimler\filmstrip and camera.gif" />
+    <Content Include="uyeGirisi.aspx" />
     <Content Include="uyeOl.aspx" />
     <Content Include="Web.config" />
     <Content Include="YoneticiPaneli\ckeditor\adapters\jquery.js" />
@@ -435,6 +436,13 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uyeGirisi.aspx.cs">
+      <DependentUpon>uyeGirisi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uyeGirisi.aspx.designer.cs">
+      <DependentUpon>uyeGirisi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="uyeOl.aspx.cs">
       <DependentUpon>uyeOl.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

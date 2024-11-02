@@ -27,7 +27,7 @@ namespace MovieStallWebApp.YoneticiPaneli
                     {
                         ddl_yoneticiTuru.DataSource = vrktmn.yoneticiTuruListele();
                         ddl_yoneticiTuru.DataBind();
-                        ddl_yoneticiTuru.SelectedValue= Convert.ToString(Y.YntTurID);
+                        ddl_yoneticiTuru.SelectedValue = Convert.ToString(Y.YntTurID);
                         tb_isim.Text = Y.Isim;
                         tb_soyisim.Text = Y.Soyisim;
                         tb_kullaniciAdi.Text = Y.KullaniciAdi;
@@ -45,17 +45,20 @@ namespace MovieStallWebApp.YoneticiPaneli
 
         protected void lbtn_yoneticiDuzenle_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Request.QueryString["YntID"]);
             if (!string.IsNullOrEmpty(tb_isim.Text))
             {
-                yonetici Y = new yonetici();
+                int id = Convert.ToInt32(Request.QueryString["YntID"]);
+                yonetici Y = vrktmn.yoneticiGetir(id);
                 Y.YntID = id;
                 Y.YntTurID = Convert.ToInt32(ddl_yoneticiTuru.SelectedItem.Value);
                 Y.Isim = tb_isim.Text;
                 Y.Soyisim = tb_soyisim.Text;
                 Y.KullaniciAdi = tb_kullaniciAdi.Text;
                 Y.Mail = tb_mail.Text;
-                Y.Sifre = tb_sifre.Text;
+                if (tb_sifre.Text != "")
+                {
+                    Y.Sifre = tb_sifre.Text;
+                }
                 Y.Durum = cb_durum.Checked;
 
                 if (vrktmn.yoneticiGuncelle(Y))

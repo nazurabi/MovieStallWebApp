@@ -13,15 +13,30 @@ namespace MovieStallWebApp
         verikatmani vrktmn = new verikatmani();
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Request.QueryString.Count != 0)
             {
                 if (!IsPostBack)
                 {
-                    int id = Convert.ToInt32(Request.QueryString["KategoriID"]);
-                    lv_kategorininFilmleri.DataSource = vrktmn.kategoriyeAitFilmleriListele(id,true);
-                    lv_kategorininFilmleri.DataBind();
-                    kategori K = vrktmn.kategoriGetir(id);
-                    lbl_kategoriAdi.Text = K.KategoriIsmi;
+                    if (Request.QueryString.AllKeys[0].ToString() == "TurIDFK") //sen hayatta en zorlandığım şeylerden biriydin ŞEREFSİZ QUERYSTRİNG İBİNESİ
+                    {
+                        int id = Convert.ToInt32(Request.QueryString["TurIDFK"]);
+                        rpt_kategoriler.DataSource = vrktmn.tureAitKategorileriListele(id);
+                        rpt_kategoriler.DataBind();
+                        vrktmn.sonSecilenGuncelle(id);
+                    }
+                    else
+                    {
+                        secilenTur ST = vrktmn.sonSecilenGetir();
+                        int secilen = ST.SonSecilen;
+                        rpt_kategoriler.DataSource = vrktmn.tureAitKategorileriListele(secilen);
+                        rpt_kategoriler.DataBind();
+                        int id = Convert.ToInt32(Request.QueryString["KategoriID"]);
+                        lv_kategorininFilmleri.DataSource = vrktmn.kategoriyeAitFilmleriListele(id, true);
+                        lv_kategorininFilmleri.DataBind();
+                        kategori K = vrktmn.kategoriGetir(id);
+                        lbl_kategoriAdi.Text = K.KategoriIsmi;
+                    }
                 }
                 else
                 {
@@ -29,6 +44,5 @@ namespace MovieStallWebApp
                 }
             }
         }
-     
     }
 }

@@ -17,11 +17,13 @@
             padding: 10px;
             text-align: left;
             border: 1px solid silver;
+
         }
 
         .tablo tr td {
             border: 1px solid silver;
             padding: 10px;
+
         }
 
             .tablo tr td img {

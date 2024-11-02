@@ -7,8 +7,6 @@ body {
     font-family: Calibri;
 }
 
-
-
 .gecici2 {
     width: 300px;
     background-color: #ffd800;
@@ -25,8 +23,13 @@ body {
 }
 
 .icerik {
-    width: 1000px;
+    width: 1130px;
     float: left;
+    padding-top: 40px;
+}
+
+.satir {
+    padding: 5px 0;
 }
 
 .kategoriler {
@@ -35,7 +38,7 @@ body {
     float: left;
     padding-left: 5px;
     padding-right: 5px;
-    margin: 20px 0;
+    margin-right: 10px;
     background-color: #A8C6CE;
 }
 
@@ -116,6 +119,34 @@ body {
                 margin-right: auto;
             }
 
+
+.kategorilerTablo {
+    width: 900px;
+    font-size: 12px;
+    padding-left: 20px;
+}
+
+    .kategorilerTablo tr {
+    }
+
+        .kategorilerTablo tr th {
+            background-color: #ECF0F1;
+            padding: 10px;
+            text-align: left;
+            border: 1px solid silver;
+        }
+
+        .kategorilerTablo tr td {
+            border: 1px solid silver;
+            padding: 0 10px;
+        }
+
+            .kategorilerTablo tr td img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
 .reklam {
     width: 160px;
     padding-top: 40px;
@@ -124,13 +155,38 @@ body {
 
 .eserDetay {
     width: 800px;
-    font-size: 12px;
+    font-size: 20px;
     padding-left: 20px;
+}
+
+.yorumTasiyici {
+    width: 500px;
+    border: 1px solid silver;
+    margin-left: 20px;
+    padding: 20px 20px;
+}
+
+.yorumTasiyiciBaslik {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.multiText{
+    width: 450px;
+    height: 100px;
+    max-width: 450px;
+    min-width: 450px;
+    max-height: 100px;
+    min-height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ECF0F1;
 }
 
 .formTasiyiciUyelik {
     width: 375px;
-    margin: 20px auto;
+    float: left;
     background-image: url('../resimler/logo arka planlı.jpg');
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -208,4 +264,50 @@ body {
 .kayitdurum {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.tasiyici {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 13px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 13px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 13px 0px rgba(0,0,0,0.75);
+}
+
+.sol {
+    background-color: white;
+    padding: 40px;
+    width: 400px;
+    float: left;
+    height: 300px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.sag {
+    background-image: url('../../resimler/filmstrip and camera.gif');
+    background-size: 100%;
+    padding: 10px;
+    width: 460px;
+    float: left;
+    height: 360px;
+    text-align: center;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+    .girisButon{
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 3px;
+    text-decoration: none;
+    width: 320px;
+    background-color: #1ABC9C;
+    cursor: pointer;
+}
+
+.girisButon:hover {
+    background-color: #F9D56D;
 }

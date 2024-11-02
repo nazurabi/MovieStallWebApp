@@ -4,44 +4,56 @@
     <link href="css/sayfaTasarimi.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div >
-        <br />
-        <asp:Label ID="lbl_kategoriAdi" runat="server" Style="padding-left: 20px; font-weight:600"></asp:Label>
-        <br />
-    </div>
     <div>
-        <asp:ListView ID="lv_kategorininFilmleri" runat="server">
-            <LayoutTemplate>
-                <table cellspacing="0" cellpadding="0" class="tablo">
+        <asp:Label ID="lbl_kategoriAdi" runat="server" Style="padding-left: 20px; font-weight: 600"></asp:Label>
+        <div class="kategoriler" style="background-color: blue; height: 250px; float: left;">
+            <asp:Repeater ID="rpt_kategoriler" runat="server">
+                <ItemTemplate>
+                    <table cellspacing="20">
+                        <tr>
+                            <td>
+                                <a href='Default.aspx?KategoriID=<%#Eval("KategoriIDFK") %>'><%# Eval("KategoriIsmi") %></a>
+                            </td>
+                        </tr>
+                    </table>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+        <div style="background-color: aqua; height: 100px;">
+            <asp:ListView ID="lv_kategorininFilmleri" runat="server">
+                <LayoutTemplate>
+                    <table cellspacing="0" cellpadding="0" class="kategorilerTablo">
+                        <tr>
+                            <th>Kapak Resmi</th>
+                            <th>Türü</th>
+                            <th>İsim</th>
+                            <th>Yıl</th>
+                            <th>İmdb Puanı</th>
+                            <th>Vizyon Tarihi</th>
+                            <th>Konusu</th>
+                            <th>Görüntüleme Sayısı</th>
+                        </tr>
+                        <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
+                    </table>
+                </LayoutTemplate>
+                <ItemTemplate>
                     <tr>
-                        <th>Kapak Resmi</th>
-                        <th>Türü</th>
-                        <th>İsim</th>
-                        <th>Yıl</th>
-                        <th>İmdb Puanı</th>
-                        <th>Vizyon Tarihi</th>
-                        <th>Konusu</th>
-                        <th>Görüntüleme Sayısı</th>
-                    </tr>
-                    <asp:PlaceHolder ID="itemPlaceHolder" runat="server"></asp:PlaceHolder>
-                </table>
-            </LayoutTemplate>
-            <ItemTemplate>
-                <tr>
-                    <td>
-                        <a href='eserDetay.aspx?EserBilgisiID=<%# Eval("EserBilgisiID") %>'>
-                            <img src='../resimler/EserResimleri/<%# Eval("KapakResmi") %>' height="100" />
-                        </a>
-                    </td>
-                    <td><%# Eval("TurIsmi") %></td>
-                    <td><%# Eval("Isim") %></td>
-                    <td><%# Eval("Yil") %></td>
-                    <td><%# Eval("ImdbPuani") %></td>
-                    <td><%# Eval("VizyonTarihi") %></td>
-                    <td><%# Eval("Konusu") %></td>
-                    <td><%# Eval("GoruntulemeSayisi") %></td>
-            </ItemTemplate>
-        </asp:ListView>
+                        <td>
+                            <a href='eserDetay.aspx?EserBilgisiID=<%# Eval("EserBilgisiID") %>'>
+                                <img src='../resimler/EserResimleri/<%# Eval("KapakResmi") %>' height="100" />
+                            </a>
+                        </td>
+                        <td><%# Eval("TurIsmi") %></td>
+                        <td><%# Eval("Isim") %></td>
+                        <td><%# Eval("Yil") %></td>
+                        <td><%# Eval("ImdbPuani") %></td>
+                        <td><%# Eval("VizyonTarihi") %></td>
+                        <td><%# Eval("Konusu") %></td>
+                        <td><%# Eval("GoruntulemeSayisi") %></td>
+                </ItemTemplate>
+            </asp:ListView>
+        </div>
     </div>
 </asp:Content>
+
 

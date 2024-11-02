@@ -533,7 +533,7 @@ namespace VeriErisimKatmani
                     E.Yil = okuyucu.GetString(3);
                     E.ImdbPuani = okuyucu.GetString(4);
                     E.VizyonTarihi = okuyucu.GetString(5);
-                    E.Konusu = okuyucu.GetString(6).Substring(0, 200) + "...";
+                    E.Konusu = okuyucu.GetString(6);
                     E.KapakResmi = okuyucu.GetString(7);
                     E.YayinDurum = okuyucu.GetBoolean(8);
                     E.KEserID = okuyucu.GetInt32(9);
@@ -582,7 +582,7 @@ namespace VeriErisimKatmani
                     E.Yil = okuyucu.GetString(3);
                     E.ImdbPuani = okuyucu.GetString(4);
                     E.VizyonTarihi = okuyucu.GetString(5);
-                    E.Konusu = okuyucu.GetString(6).Substring(0, 200) + "...";
+                    E.Konusu = okuyucu.GetString(6);
                     E.KapakResmi = okuyucu.GetString(7);
                     E.YayinDurum = okuyucu.GetBoolean(8);
                     E.KEserID = okuyucu.GetInt32(9);
@@ -706,7 +706,7 @@ namespace VeriErisimKatmani
                     E.Yil = okuyucu.GetString(6);
                     E.ImdbPuani = okuyucu.GetString(7);
                     E.VizyonTarihi = okuyucu.GetString(8);
-                    E.Konusu = okuyucu.GetString(9).Substring(0, 200) + "...";
+                    E.Konusu = okuyucu.GetString(9);
                     E.KapakResmi = okuyucu.GetString(10);
 
                     //E.YayinDurum = okuyucu.GetBoolean(8);
@@ -824,7 +824,7 @@ namespace VeriErisimKatmani
                     E.Yil = okuyucu.GetString(4);
                     E.ImdbPuani = okuyucu.GetString(5);
                     E.VizyonTarihi = okuyucu.GetString(6);
-                    E.Konusu = okuyucu.GetString(7).Substring(0, 200) + "...";
+                    E.Konusu = okuyucu.GetString(7);
                     E.GoruntulemeSayisi = okuyucu.GetInt64(8);
                     E.KapakResmi = okuyucu.GetString(9);
                     if (!okuyucu.IsDBNull(10))
@@ -875,7 +875,7 @@ namespace VeriErisimKatmani
                     E.Yil = okuyucu.GetString(4);
                     E.ImdbPuani = okuyucu.GetString(5);
                     E.VizyonTarihi = okuyucu.GetString(6);
-                    E.Konusu = okuyucu.GetString(7).Substring(0, 200) + "...";
+                    E.Konusu = okuyucu.GetString(7);
                     E.GoruntulemeSayisi = okuyucu.GetInt64(8);
                     E.KapakResmi = okuyucu.GetString(9);
                     if (!okuyucu.IsDBNull(10))
@@ -1084,7 +1084,7 @@ namespace VeriErisimKatmani
                     Y.YonetmenIsmi = okuyucu.GetString(1);
                     Y.YonetmenSoyisim = okuyucu.GetString(2);
                     Y.Cinsiyet = okuyucu.GetString(3);
-                    Y.Biyografi = okuyucu.GetString(4).Substring(0, 200) + "...";
+                    Y.Biyografi = okuyucu.GetString(4);
                     Y.DogumTarihi = okuyucu.GetString(5);
                     Y.DogumYeri = okuyucu.GetString(6);
                     Y.KapakResmi = okuyucu.GetString(7);
@@ -1209,7 +1209,7 @@ namespace VeriErisimKatmani
                     E.Yil = okuyucu.GetString(3);
                     E.ImdbPuani = okuyucu.GetString(4);
                     E.VizyonTarihi = okuyucu.GetString(5);
-                    E.Konusu = okuyucu.GetString(6).Substring(0, 200) + "...";
+                    E.Konusu = okuyucu.GetString(6);
                     E.KapakResmi = okuyucu.GetString(7);
                     E.YayinDurum = okuyucu.GetBoolean(8);
                     E.YFID = okuyucu.GetInt32(9);
@@ -1324,7 +1324,7 @@ namespace VeriErisimKatmani
                     O.OyuncuIsmi = okuyucu.GetString(1);
                     O.OyuncuSoyisim = okuyucu.GetString(2);
                     O.Cinsiyet = okuyucu.GetString(3);
-                    O.Biyografi = okuyucu.GetString(4).Substring(0, 200) + "...";
+                    O.Biyografi = okuyucu.GetString(4);
                     O.DogumTarihi = okuyucu.GetString(5);
                     O.DogumYeri = okuyucu.GetString(6);
                     O.KapakResmi = okuyucu.GetString(7);
@@ -1449,7 +1449,7 @@ namespace VeriErisimKatmani
                     E.Yil = okuyucu.GetString(3);
                     E.ImdbPuani = okuyucu.GetString(4);
                     E.VizyonTarihi = okuyucu.GetString(5);
-                    E.Konusu = okuyucu.GetString(6).Substring(0, 200) + "...";
+                    E.Konusu = okuyucu.GetString(6);
                     E.KapakResmi = okuyucu.GetString(7);
                     E.YayinDurum = okuyucu.GetBoolean(8);
                     E.OFID = okuyucu.GetInt32(9);
@@ -1519,6 +1519,55 @@ namespace VeriErisimKatmani
         #endregion
 
         #region Kullanıcı Metodları
+
+        public uyeler uyeGirisi(string mail, string sifre)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT COUNT(*) FROM Uyeler WHERE Mail=@mail AND Sifre=@sifre";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@mail", mail); 
+                cmd.Parameters.AddWithValue("@sifre", sifre);
+                con.Open();
+                int sayi = Convert.ToInt32(cmd.ExecuteScalar()); 
+                if (sayi == 1) 
+                {
+                    cmd.CommandText = "SELECT UyeID, Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum, Avatar FROM Uyeler WHERE Y.Mail=@mail AND Y.Sifre=@sifre";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@mail", mail);
+                    cmd.Parameters.AddWithValue("@sifre", sifre);
+                    SqlDataReader okuyucu = cmd.ExecuteReader();
+                    uyeler U = new uyeler();
+                    while (okuyucu.Read())
+                    {
+                        U.UyeID = okuyucu.GetInt32(0);
+                        U.Isim= okuyucu.GetInt32(1);
+                        U.Soyisim= okuyucu.GetString(2);
+                        U.KullaniciAdi = okuyucu.GetString(3);
+                        U.Mail= okuyucu.GetString(4);
+                        U.Sifre= okuyucu.GetString(5);
+                        U.Durum = okuyucu.GetString(6);
+                        U.Avatar= okuyucu.GetString(7);
+                  BURAYI HALLET 
+                    }
+                    return U;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
 
         public bool uyeEkle(uyeler U)
         {

@@ -19,47 +19,37 @@
                 <img src="resimler/logo.png" height="120" />
                 <div class="uyePanel">
                     <a href="uyeOl.aspx" style="padding-left: 5px;">ÜYE OL</a>
-                    <a href="#" style="padding-left: 10px;">ÜYE GİRİŞİ</a>  
+                    <a href="#" style="padding-left: 10px;">ÜYE GİRİŞİ</a>
                     <a href="#" style="padding-left: 10px;">ÜYELİK İŞLEMLERİ</a>
                 </div>
             </div>
             <div class="linkler">
                 <br />
-                <asp:LinkButton ID="lbtn_film" runat="server" OnClick="lbtn_film_Click">FİLM</asp:LinkButton>
-                <asp:LinkButton ID="lbtn_kisafilm" runat="server" OnClick="lbtn_kisafilm_Click">KISA FİLM</asp:LinkButton>
+                <a href='Default.aspx?TurIDFK=1'>FİLM</a>
+                <a href='Default.aspx?TurIDFK=3'>KISA FİLM</a>
             </div>
             <div class="linkler">
-                <asp:LinkButton ID="lbtn_dizi" runat="server" OnClick="lbtn_dizi_Click">&nbsp&nbsp DİZİ</asp:LinkButton>
-                <asp:LinkButton ID="lbtn_belgesel" runat="server" OnClick="lbtn_belgesel_Click">&nbsp&nbsp BELGESEL</asp:LinkButton>
+                <a href='Default.aspx?TurIDFK=2'>DİZİ</a>
+                <a href='Default.aspx?TurIDFK=4'>BELGESEL</a>
             </div>
             <div style="clear: both;"></div>
         </div>
 
-        <div class="anaTasiyici">
-            <div class="kategoriler">
-                <asp:Repeater ID="rpt_kategoriler" runat="server">
-                    <ItemTemplate>
-                        <table cellspacing="20">
-                            <tr>
-                                <td>
-                                    <a href='Default.aspx?KategoriID=<%#Eval("KategoriIDFK") %>'><%# Eval("KategoriIsmi") %></a>
-                                </td>
-                            </tr>
-                        </table>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </div>
+        <div class="anaTasiyici" style="background-color: yellow; height: 200px;">
+
             <div class="icerik">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
+
             <div class="reklam">
                 <a href="https://www.turhost.com/r/104820/hosting">
                     <img src="reklamlar/160x600.gif" />
                 </a>
-
             </div>
-            <div style="clear:both;"></div>
+
+            <div style="clear: both;"></div>
+
         </div>
     </form>
 </body>

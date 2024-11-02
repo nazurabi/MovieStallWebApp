@@ -55,12 +55,12 @@
             </div>
 
             <div class="satir">
-                <br />
                 <asp:LinkButton ID="lbtn_yoneticiEkle" runat="server" CssClass="islembuton" OnClick="lbtn_yoneticiEkle_Click">Yönetici Ekle</asp:LinkButton>
             </div>
+            <div></div>
             <div class="satir">
-                <br />
                 <asp:Label ID="lbl_bilgi" runat="server" CssClass="bilgipaneli" Visible="false">Yönetici Başarılı Şekilde Eklendi</asp:Label>
+                    <br />
             </div>
 
         </div>

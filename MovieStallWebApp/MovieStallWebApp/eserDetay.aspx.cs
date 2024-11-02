@@ -36,5 +36,10 @@ namespace MovieStallWebApp
                 }
             }
         }
+
+        protected void lbtn_yorumEkle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

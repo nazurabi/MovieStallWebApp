@@ -23,7 +23,7 @@ namespace MovieStallWebApp.YoneticiPaneli
                 if (!IsPostBack)
                 {
                     int id = Convert.ToInt32(Request.QueryString["UyeID"]);
-                        uyeler U = vrktmn.uyeGetir(id);
+                    uyeler U = vrktmn.uyeGetir(id);
                     if (U != null)
                     {
                         tb_isim.Text = U.Isim;
@@ -52,7 +52,10 @@ namespace MovieStallWebApp.YoneticiPaneli
                 U.Soyisim = tb_soyisim.Text;
                 U.KullaniciAdi = tb_kullaniciAdi.Text;
                 U.Mail = tb_mail.Text;
-                U.Sifre = tb_sifre.Text;
+                if (tb_sifre.Text != "")
+                {
+                    U.Sifre = tb_sifre.Text;
+                }
                 U.Durum = cb_durum.Checked;
                 if (fu_resim.HasFile)
                 {
@@ -64,7 +67,7 @@ namespace MovieStallWebApp.YoneticiPaneli
                     fu_resim.SaveAs(Server.MapPath("../resimler/Avatarlar/" + dosyaIsmi));
                     U.Avatar = dosyaIsmi;
                 }
-                
+
                 if (vrktmn.uyeGuncelle(U))
                 {
                     lbl_bilgi.Visible = true;
