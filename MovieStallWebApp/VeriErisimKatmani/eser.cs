@@ -27,7 +27,8 @@ namespace VeriErisimKatmani
         public int KEserID { get; set; }
         public int OFID { get; set; }
         public int EserBilgisiIDFK { get; set; }
-
+        public string[] Yonetmen { get; set; }
+        public string[] Oyuncu { get; set; }
 
     }
 }

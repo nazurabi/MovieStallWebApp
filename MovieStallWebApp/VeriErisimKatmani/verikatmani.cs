@@ -75,7 +75,7 @@ namespace VeriErisimKatmani
                 cmd.CommandText = " INSERT INTO Yoneticiler(YntTurID, Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum) VALUES(@yntTur, @isim, @soyisim, @kullaniciAdi, @mail, @sifre, @durum)";
 
                 cmd.Parameters.Clear();
-               
+
                 cmd.Parameters.AddWithValue("@yntTur", Y.YntTurID);
                 cmd.Parameters.AddWithValue("@isim", Y.Isim);
                 cmd.Parameters.AddWithValue("@soyisim", Y.Soyisim);
@@ -981,6 +981,66 @@ namespace VeriErisimKatmani
             }
         }
 
+        public eser eserDetayGetir(int id)
+        {
+            try
+            {
+                cmd.CommandText = "SELECT EserBilgisiID ,TurIDFK ,T.TurIsmi ,E.Isim ,Yil ,ImdbPuani ,VizyonTarihi ,Konusu ,E.KapakResmi, YayinDurum, YNTM.YonetmenIsmi, YNTM.YonetmenSoyisim, OYNC.OyuncuIsmi, OYNC.OyuncuSoyisim FROM EserBilgisi AS E JOIN Turler AS T ON E.TurIDFK= T.TurID JOIN YonetmeninFilmleri AS YNTMFLM ON YNTMFLM.EserBilgisiIDFK = E.EserBilgisiID JOIN Yonetmenler AS YNTM ON YNTMFLM.YonetmenIDFK= YNTM.YonetmenID JOIN OyuncununFilmleri AS OYNCFLM ON OYNCFLM.EserBilgisiIDFK=E.EserBilgisiID JOIN Oyuncular AS OYNC ON OYNCFLM.OyuncuIDFK=OYNC.OyuncuID WHERE EserBilgisiID=@id";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id", id);
+                con.Open();
+                string[] yonetmen = new string[0];
+                string[] oyuncu = new string[0];
+
+                SqlDataReader okuyucu = cmd.ExecuteReader();
+                eser E = new eser();
+
+                while (okuyucu.Read())
+                {
+                    string[] geciciyonetmen = new string[yonetmen.Length + 1];
+                    string[] gecicioyuncu = new string[oyuncu.Length + 1];
+                    E.EserBilgisiID = okuyucu.GetInt32(0);
+                    E.TurIDFK = okuyucu.GetInt32(1);
+                    E.TurIsmi = okuyucu.GetString(2);
+                    E.Isim = okuyucu.GetString(3);
+                    E.Yil = okuyucu.GetString(4);
+                    E.ImdbPuani = okuyucu.GetString(5);
+                    E.VizyonTarihi = okuyucu.GetString(6);
+                    E.Konusu = okuyucu.GetString(7);
+                    E.KapakResmi = okuyucu.GetString(8);
+                    E.YayinDurum = okuyucu.GetBoolean(9);
+
+                  //buraya yönetmen ve oyuncular için mükerrer kayıt oluşmasını önleyecek kod koy
+                    for (int i = 0; i < yonetmen.Length; i++)
+                    {
+                        geciciyonetmen[i] = yonetmen[i];
+                    }
+                    for (int i = 0; i < oyuncu.Length; i++)
+                    {
+                        gecicioyuncu[i] = oyuncu[i];
+                    }
+
+                    geciciyonetmen[geciciyonetmen.Length - 1] = okuyucu.GetString(10) + " " + okuyucu.GetString(11);
+                    gecicioyuncu[gecicioyuncu.Length - 1] = okuyucu.GetString(12) + " " + okuyucu.GetString(13);
+                    yonetmen = geciciyonetmen;
+                    oyuncu = gecicioyuncu;
+                    E.Yonetmen = yonetmen;
+                    E.Oyuncu = oyuncu;
+
+                }
+                return E;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Bir Hata Oluştu" + ex);
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         public bool eserGuncelle(eser E)
         {
             try
@@ -1526,11 +1586,11 @@ namespace VeriErisimKatmani
             {
                 cmd.CommandText = "SELECT COUNT(*) FROM Uyeler WHERE Mail=@mail AND Sifre=@sifre";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@mail", mail); 
+                cmd.Parameters.AddWithValue("@mail", mail);
                 cmd.Parameters.AddWithValue("@sifre", sifre);
                 con.Open();
-                int sayi = Convert.ToInt32(cmd.ExecuteScalar()); 
-                if (sayi == 1) 
+                int sayi = Convert.ToInt32(cmd.ExecuteScalar());
+                if (sayi == 1)
                 {
                     cmd.CommandText = "SELECT UyeID, Isim, Soyisim, KullaniciAdi, Mail, Sifre, Durum, Avatar FROM Uyeler WHERE Mail=@mail AND Sifre=@sifre";
                     cmd.Parameters.Clear();
@@ -1541,13 +1601,13 @@ namespace VeriErisimKatmani
                     while (okuyucu.Read())
                     {
                         U.UyeID = okuyucu.GetInt32(0);
-                        U.Isim= okuyucu.GetString(1);
-                        U.Soyisim= okuyucu.GetString(2);
+                        U.Isim = okuyucu.GetString(1);
+                        U.Soyisim = okuyucu.GetString(2);
                         U.KullaniciAdi = okuyucu.GetString(3);
-                        U.Mail= okuyucu.GetString(4);
-                        U.Sifre= okuyucu.GetString(5);
+                        U.Mail = okuyucu.GetString(4);
+                        U.Sifre = okuyucu.GetString(5);
                         U.Durum = okuyucu.GetBoolean(6);
-                        U.Avatar= okuyucu.GetString(7);
+                        U.Avatar = okuyucu.GetString(7);
                     }
                     return U;
                 }
@@ -1577,7 +1637,7 @@ namespace VeriErisimKatmani
                 cmd.Parameters.AddWithValue("@soyIsim", U.Soyisim);
                 cmd.Parameters.AddWithValue("@kullaniciAdi", U.KullaniciAdi);
                 cmd.Parameters.AddWithValue("@mail", U.Mail);
-                cmd.Parameters.AddWithValue("@sifre",U.Sifre);
+                cmd.Parameters.AddWithValue("@sifre", U.Sifre);
                 cmd.Parameters.AddWithValue("@durum", U.Durum);
                 cmd.Parameters.AddWithValue("@avatar", U.Avatar);
                 con.Open();
@@ -1615,7 +1675,7 @@ namespace VeriErisimKatmani
                     U.Sifre = okuyucu.GetString(5);
                     U.Avatar = okuyucu.GetString(6);
                     U.Durum = okuyucu.GetBoolean(7);
-             
+
                     uye.Add(U);
                 }
                 return uye;
@@ -1662,12 +1722,12 @@ namespace VeriErisimKatmani
                 {
                     U.UyeID = okuyucu.GetInt32(0);
                     U.Isim = okuyucu.GetString(1);
-                    U.Soyisim= okuyucu.GetString(2);
-                    U.KullaniciAdi= okuyucu.GetString(3);
+                    U.Soyisim = okuyucu.GetString(2);
+                    U.KullaniciAdi = okuyucu.GetString(3);
                     U.Mail = okuyucu.GetString(4);
-                    U.Sifre= okuyucu.GetString(5);
-                    U.Avatar= okuyucu.GetString(6);
-                    U.Durum= okuyucu.GetBoolean(7);
+                    U.Sifre = okuyucu.GetString(5);
+                    U.Avatar = okuyucu.GetString(6);
+                    U.Durum = okuyucu.GetBoolean(7);
                 }
                 return U;
             }
@@ -1695,7 +1755,7 @@ namespace VeriErisimKatmani
                 cmd.Parameters.AddWithValue("@sifre", U.Sifre);
                 cmd.Parameters.AddWithValue("@durum", U.Durum);
                 cmd.Parameters.AddWithValue("@avatar", U.Avatar);
-                cmd.Parameters.AddWithValue("@id",U.UyeID);
+                cmd.Parameters.AddWithValue("@id", U.UyeID);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 return true;
@@ -1718,11 +1778,11 @@ namespace VeriErisimKatmani
             {
                 cmd.CommandText = "INSERT INTO Yorumlar(UyeIDFK, EserBilgisiIDFK, Yorum, EklemeTarihi, MovieStallPuani, Durum) VALUES(@uyeIDFK, @eserBilgisiIDFK, @yorum, @eklemeTarihi, @mvPuani, @durum)";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@uyeIDFK",Y.UyeIDFK);
+                cmd.Parameters.AddWithValue("@uyeIDFK", Y.UyeIDFK);
                 cmd.Parameters.AddWithValue("@eserBilgisiIDFK", Y.EserBilgisiIDFK);
-                cmd.Parameters.AddWithValue("@yorum",Y.Yorum);
+                cmd.Parameters.AddWithValue("@yorum", Y.Yorum);
                 cmd.Parameters.AddWithValue("@eklemeTarihi", Y.EklemeTarihi);
-                cmd.Parameters.AddWithValue("@mvPuani",Y.MovieStallPuani);
+                cmd.Parameters.AddWithValue("@mvPuani", Y.MovieStallPuani);
                 cmd.Parameters.AddWithValue("@durum", Y.Durum);
                 con.Open();
                 cmd.ExecuteNonQuery();

@@ -19,6 +19,7 @@ namespace MovieStallWebApp.YoneticiPaneli
                 ddl_tur.DataSource = vrktmn.turListele();
                 ddl_tur.DataBind();
             }
+           
         }
 
         protected void lbtn_eserEkle_Click(object sender, EventArgs e)

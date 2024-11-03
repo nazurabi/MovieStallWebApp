@@ -22,23 +22,31 @@
                 </div>
                 <div style="float: left; padding-left: 20px;">
                     <div class="satir">
-                        Türü:<asp:Literal ID="ltrl_tur" runat="server"></asp:Literal>
+                        Türü:&nbsp&nbsp<asp:Literal ID="ltrl_tur" runat="server"></asp:Literal>
                     </div>
 
                     <div class="satir">
-                        İsmi:<asp:Literal ID="ltrl_isim" runat="server"></asp:Literal>
+                        İsmi:&nbsp&nbsp<asp:Literal ID="ltrl_isim" runat="server"></asp:Literal>
                     </div>
 
                     <div class="satir">
-                        Yıl:<asp:Literal ID="ltrl_yil" runat="server"></asp:Literal>
+                        Yıl:&nbsp&nbsp<asp:Literal ID="ltrl_yil" runat="server"></asp:Literal>
                     </div>
 
                     <div class="satir">
-                        İMDB:<asp:Literal ID="ltrl_imdb" runat="server"></asp:Literal>
+                        İMDB:&nbsp&nbsp<asp:Literal ID="ltrl_imdb" runat="server"></asp:Literal>
                     </div>
 
                     <div class="satir">
-                        Vizyon Tarihi:<asp:Literal ID="ltrl_vizyonTarihi" runat="server"></asp:Literal>
+                        Vizyon Tarihi:&nbsp<asp:Literal ID="ltrl_vizyonTarihi" runat="server"></asp:Literal>
+                    </div>
+
+                    <div class="satir">
+                        Yönetmen İsmi:&nbsp<asp:Literal ID="ltrl_yonetmen" runat="server"></asp:Literal>
+                    </div>
+
+                    <div class="satir">
+                        Oyuncular:&nbsp<asp:Literal ID="ltrl_oyuncu" runat="server"></asp:Literal>
                     </div>
                 </div>
 

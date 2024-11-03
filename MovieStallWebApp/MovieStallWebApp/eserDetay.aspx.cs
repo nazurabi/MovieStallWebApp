@@ -27,7 +27,7 @@ namespace MovieStallWebApp
                 {
                     int id = Convert.ToInt32(Request.QueryString["EserBilgisiID"]);
                     vrktmn.eserGoruntulemeArttir(id);
-                    eser E = vrktmn.eserGetir(id);
+                    eser E = vrktmn.eserDetayGetir(id);
                     img_resim.ImageUrl = "../resimler/EserResimleri/" + E.KapakResmi;
                     ltrl_tur.Text = E.TurIsmi;
                     ltrl_isim.Text = E.Isim;
@@ -36,6 +36,14 @@ namespace MovieStallWebApp
                     ltrl_vizyonTarihi.Text = E.VizyonTarihi;
                     ltrl_konu.Text = E.Konusu;
                     ltrl_eserAdi.Text = E.Isim;
+                    for (int i = 0; i < E.Yonetmen.Length; i++)
+                    {
+                        ltrl_yonetmen.Text = ltrl_yonetmen.Text + " " + E.Yonetmen[i];
+                    }
+                    for (int i = 0; i < E.Oyuncu.Length; i++)
+                    {
+                        ltrl_oyuncu.Text = ltrl_oyuncu.Text + " " + E.Oyuncu[i];
+                    }
 
                 }
                 else
@@ -53,7 +61,7 @@ namespace MovieStallWebApp
                 if (!string.IsNullOrEmpty(tb_yorum.Text))
                 {
                     int id = Convert.ToInt32(Request.QueryString["EserBilgisiID"]);
-                    eser E = vrktmn.eserGetir(id);
+                    eser E = vrktmn.eserDetayGetir(id);
 
                     yorumlar Y = new yorumlar();
 

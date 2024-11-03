@@ -78,6 +78,24 @@ namespace MovieStallWebApp
         protected global::System.Web.UI.WebControls.Literal ltrl_vizyonTarihi;
 
         /// <summary>
+        /// ltrl_yonetmen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltrl_yonetmen;
+
+        /// <summary>
+        /// ltrl_oyuncu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltrl_oyuncu;
+
+        /// <summary>
         /// ltrl_konu control.
         /// </summary>
         /// <remarks>
