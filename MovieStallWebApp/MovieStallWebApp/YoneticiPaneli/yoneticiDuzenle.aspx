@@ -8,7 +8,7 @@
 
     <div class="yoneticiFormTasiyici">
         <div class="formBaslik">
-            <h4>Yönetici Ekle</h4>
+            <h4>Yönetici Düzenle</h4>
         </div>
         <div class="formIcerik">
             <div>
@@ -59,8 +59,8 @@
         </div>
 
         <div class="satir">
-            <br />
             <asp:Label ID="lbl_bilgi" runat="server" CssClass="bilgipaneli" Visible="false">Yönetici Başarılı Şekilde Düzenlendi</asp:Label>
+             <br />
         </div>
 
     </div>

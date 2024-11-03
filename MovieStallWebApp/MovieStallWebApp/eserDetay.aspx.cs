@@ -36,7 +36,7 @@ namespace MovieStallWebApp
                     ltrl_vizyonTarihi.Text = E.VizyonTarihi;
                     ltrl_konu.Text = E.Konusu;
                     ltrl_eserAdi.Text = E.Isim;
-                    for (int i = 0; i < E.Yonetmen.Length; i++)
+                    for (int i = 0; i < E.Yonetmen.Length; i++) // Yönetmen görüntülemeleri hatalı düzelt !!!
                     {
                         ltrl_yonetmen.Text = ltrl_yonetmen.Text + " " + E.Yonetmen[i];
                     }

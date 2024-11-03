@@ -18,7 +18,7 @@ namespace MovieStallWebApp
             {
                 if (!IsPostBack)
                 {
-                    if (Request.QueryString.AllKeys[0].ToString() == "TurIDFK") //sen hayatta en zorlandığım şeylerden biriydin ŞEREFSİZ QUERYSTRİNG İBİNESİ
+                    if (Request.QueryString.AllKeys[0].ToString() == "TurIDFK")
                     {
                         int id = Convert.ToInt32(Request.QueryString["TurIDFK"]);
                         rpt_kategoriler.DataSource = vrktmn.tureAitKategorileriListele(id);
